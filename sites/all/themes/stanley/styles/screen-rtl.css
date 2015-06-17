@@ -1,0 +1,30 @@
+html.js .fieldsets-group fieldset.collapsed .fieldset-legend , 
+html.js fieldset.collapsed .fieldset-legend {
+	background-image: none;
+}
+
+table th{
+    text-align: right !important;
+}
+
+#overlay-title , 
+h1 {
+  float: right !important;
+}
+
+#tasks ul li{
+  float: right;
+}
+
+#tasks ul{
+	float: right;
+}
+
+#tasks .secondary-nav {
+    float: left;
+}
+
+
+#overlay-container {
+  right: 0 !important;
+}

@@ -1,0 +1,13 @@
+name = Navbar Awesome
+description = Adds FontAwesome icons and styling enhancements to Navbar.
+configure = admin/config/user-interface/navbar-awesome
+core = 7.x
+
+dependencies[] = navbar
+
+; Information added by Drupal.org packaging script on 2014-08-07
+version = "7.x-1.0-beta1+1-dev"
+core = "7.x"
+project = "navbar_awesome"
+datestamp = "1407428929"
+

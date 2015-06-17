@@ -1,0 +1,46 @@
+<?php
+
+/**
+* alter function for commerce_backoffice_product_quick_edit_form.
+*/
+function bruria_form_commerce_backoffice_product_quick_edit_form_alter(&$form, &$form_state, &$product){
+$product = $form_state['product'] ;
+$form['discount'] = array(
+'#type' => 'textfield',
+'#title' => t('discount'),
+'#default_value' => $product->field_discount['und'][0]['value'],
+'#size' => 5,
+);
+$form['percentage'] = array(
+'#type' => 'textfield',
+'#title' => t('percentage'),
+'#default_value' => $product->field_discount_percentage['und'][0]['value'],
+'#size' => 5,
+);
+$form['stock'] = array(
+'#type' => 'textfield',
+'#title' => t('Stock'),
+'#title_display' => 'invisible',
+'#default_value' => $product->commerce_stock['und'][0]['value'],
+'#size' => 5,
+);
+$form['#submit'][] = bruria_commerce_backoffice_product_quick_edit_form_submit;
+}
+/**
+* Submit callback for commerce_backoffice_product_quick_edit_form.
+*/
+function bruria_commerce_backoffice_product_quick_edit_form_submit($form, &$form_state) {
+$product = $form_state['product'];
+$currency_code = $product->commerce_price[LANGUAGE_NONE][0]['currency_code'];
+$product->commerce_price[LANGUAGE_NONE][0]['amount'] = commerce_currency_decimal_to_amount($form_state['values']['price'], $currency_code);
+$product->status = $form_state['values']['status'];
+$product->commerce_stock[LANGUAGE_NONE][0]['value'] = $form_state['values']['stock'];
+$product->field_discount[LANGUAGE_NONE][0]['value'] = $form_state['values']['discount'];
+$product->field_discount_percentage[LANGUAGE_NONE][0]['value'] = $form_state['values']['percentage'];
+commerce_product_save($product);
+$form_state['rebuild'] = TRUE;
+$form_state['product_saved'] = TRUE;
+} 
+
+?>
+

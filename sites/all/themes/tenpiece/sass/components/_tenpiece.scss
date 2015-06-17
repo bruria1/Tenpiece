@@ -1,0 +1,315 @@
+@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
+
+
+ @mixin res($media) {
+  @if $media == s {
+    @media (max-width: 480px) { @content; }
+  }
+  @else if $media == m {
+    @media (min-width: 481px) and (max-width: 767px) { @content; }
+  }
+  @if $media == s-m {
+    @media (max-width: 767px) { @content; }
+  }
+}
+
+@mixin width(){
+  width: 1265px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 3%;
+  box-sizing: border-box;
+}
+
+@mixin button($color1, $color2){
+  color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+  background-color: $color1;
+  border-bottom: 4px solid $color2;
+  border-radius: 10px;
+}
+
+$default: #555959;
+$light-green: #aacca3;
+$green: #81aa7a;
+$light-yellow: #e5ca8f;
+$yellow: #bf9f5f;
+$purple: #8b5fbf;
+$light-purple: #b08ada;
+
+a, a:link, a:visited{
+  text-decoration: none;
+  outline: 0;
+}
+
+textarea:focus, input:focus{
+    outline: 0;
+}
+
+*:focus {
+    outline: 0;
+    outline-style:none;
+    outline-width:0;
+}
+
+body{
+font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
+  color: $default;
+}
+
+#page{
+  @include width;
+  padding-top: 20px;
+}
+
+.button-green{
+  @include button($light-green, $green) 
+}
+
+.button-yellow{
+  @include button($light-yellow, $yellow) 
+}
+
+.button-purple{
+  @include button($light-purple, $purple) 
+}
+/************  front *************/
+
+.front{
+  #page-title{
+    display: none;
+  }
+  .field-name-body{
+    background: url("../images/swan.png") no-repeat center top;
+    max-width: 950px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    .title1{
+      font-size: 3em;
+      font-weight: bold;
+      letter-spacing: -3px;
+      line-height: 90px;
+      padding-top: 36px;
+    }
+    .title2{
+      font-weight: bold;
+      font-size: 2.1em;
+      margin-bottom: 250px;
+    }
+    .button-green, .button-yellow{
+      float: right;
+      margin-right: 3px;
+      font-size: 2.2em;
+      padding: 20px 40px;
+    }
+    .button-yellow{
+      float: left;
+      margin-left: 3px;
+    }
+    .arrow-bottom{
+      padding-top: 155px;
+      cursor: pointer;
+      margin: 0 auto 0;
+      width: 52px;
+    }
+  }
+}
+
+#block-views-products-block-1{
+  .views-row{
+    background-color:#f3f3f3;
+    box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.25);
+    width: 22%;
+    margin-left: 4%;
+    float: right;
+    margin-bottom: 50px;
+    border:1px solid #e0e0e0;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    @include res(m){
+      width: 49%;
+      margin-left: 2%;
+    }
+    @include res(s){
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+  .views-row-even{
+    @include res(m){
+      margin-left: 0;
+    }
+  }
+  .views-row-3{
+    margin-left: 0;
+    width: 48%;
+    background-color: #fff;
+    @include res(m){
+      width: 49%;
+      margin-left: 2%;
+    }
+    @include res(s){
+      width: 100%;
+    }
+    .views-field-title{
+      float: left;
+      width: 56.5%;
+      .title, .design, .price{
+        display: none;
+      }
+      .image{
+        float: left;
+        width: 100%;
+        padding: 24px;
+        margin: 0;
+        box-sizing: border-box;
+        @include res(s-m){
+          float: none;
+          width: 77%;
+          margin: 24px auto;
+        }
+      }
+    }
+    .views-field-nid{
+      display: block;
+      float: right;
+      width: 43.5%;
+      padding: 24px 0 10px;
+      .link{
+        background: url("../images/product-line.png") no-repeat center top;
+        padding-top: 24px;
+        margin-top: 20px;
+        a{
+          color: $purple;
+        }
+      }
+    }
+  }
+  .views-row-4{
+    clear: both;
+    @include res(s-m){
+      clear: none;
+    }
+  }
+  .views-row-7{
+    margin-left: 0;
+  }
+  .image{
+    margin: 21px auto 8px;
+    width: 77%;
+    img{
+      padding: 3px;
+      background-color: #fff;
+    }
+  }
+  .title, .design{
+    font-size: 1.1em;
+    a{
+      color: $default;
+    }
+  }
+  .field-name-commerce-price{
+    table{
+      margin: 16px auto 0;
+      tr{
+        border:none;
+      }
+    }
+    .commerce-price-savings-formatter-prices-down{
+      margin-top: 0px;
+      .commerce-price-savings-formatter-list{
+        color: #c0c0c0;
+        font-size: 1.1em;
+        td{
+          text-align: center;
+        }
+      }
+    }
+    .commerce-price-savings-formatter-price{
+      font-size: 1.4em;
+      td{
+        color: $purple;
+      }
+    }
+  }
+  .views-field-nid{
+    display: none;
+    .description{
+      margin-top: 8px;
+      font-size: 1.1em;
+      line-height: 1.2em;
+    }
+    .commerce-price-savings-formatter-price{
+      td{
+        color: $default;
+      }
+    }
+    .link{
+      font-size: 1.9em;
+      a{
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+#block-views-text-site-block-1{
+  clear: both;
+  .views-field-title{
+    h2{
+      font-weight: normal;
+      text-align: center;
+      font-size: 1.4em;
+      color: $purple;
+    }
+  }
+}
+/************  main menu *************/
+
+#navigation{
+  position: relative;
+  height: auto;
+  float: right;
+  padding-top: 10px;
+  width: auto;
+  a{
+    font-size: 1.1em;
+    color: $default;
+  }
+  li{
+    padding: 0 16px!important;
+  }
+  .menu-2592{
+    border-left: 1px solid;
+    margin-left: 16px;
+    padding-left: 32px!important;
+  }
+}
+
+/************  menu store  *************/
+
+#block-views-menu-store-block{
+  position: absolute;
+  margin-top: -5px;
+  background-color: #fff;
+}
+
+#block-views-menu-store-block.hide{
+  display: none;
+}
+
+/**************** user menu **********/
+
+#block-views-menu-user-block{
+  float: left;
+}
+
+/**************** edit product *********/
+
+#edit-field-other, #edit-field-surface, #edit-field-material{
+  display: none;
+}
