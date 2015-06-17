@@ -27,7 +27,7 @@
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
   background-color: $color1;
   border-bottom: 4px solid $color2;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 $default: #555959;
@@ -260,14 +260,33 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
 #block-views-text-site-block-1{
   clear: both;
   .views-field-title{
+    background: url("../images/hp-line.png") no-repeat center top;
     h2{
       font-weight: normal;
       text-align: center;
       font-size: 1.4em;
       color: $purple;
+      padding-top: 27px;
     }
   }
+  .views-field-body{
+    font-size: 1.1em;
+    color: #737373;
+    text-align: center;
+    line-height: 1.2em;
+    max-width: 885px;
+    margin: 0 auto;
+  }
+  .views-field-nothing{
+    text-align: center;
+    margin-top: 10px;
+  }
 }
+
+/************** footer *****************/
+
+
+
 /************  main menu *************/
 
 #navigation{

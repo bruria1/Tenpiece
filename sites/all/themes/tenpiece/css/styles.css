@@ -1700,7 +1700,7 @@ tr.selected td {
 /* line 803, ../sass/components/_misc.scss */
 .progress .filled {
   background-color: #0072b9;
-  background-image: url('../images/progress.gif?1430291811');
+  background-image: url('../images/progress.gif?1434536462');
 }
 
 /* line 41, ../sass/components/_tenpiece.scss */
@@ -1745,7 +1745,7 @@ body {
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
   background-color: #aacca3;
   border-bottom: 4px solid #81aa7a;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 /* line 70, ../sass/components/_tenpiece.scss */
@@ -1755,7 +1755,7 @@ body {
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
   background-color: #e5ca8f;
   border-bottom: 4px solid #bf9f5f;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 /* line 74, ../sass/components/_tenpiece.scss */
@@ -1765,7 +1765,7 @@ body {
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
   background-color: #b08ada;
   border-bottom: 4px solid #8b5fbf;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 /************  front *************/
@@ -1997,16 +1997,36 @@ body {
 #block-views-text-site-block-1 {
   clear: both;
 }
-/* line 263, ../sass/components/_tenpiece.scss */
+/* line 262, ../sass/components/_tenpiece.scss */
+#block-views-text-site-block-1 .views-field-title {
+  background: url("../images/hp-line.png") no-repeat center top;
+}
+/* line 264, ../sass/components/_tenpiece.scss */
 #block-views-text-site-block-1 .views-field-title h2 {
   font-weight: normal;
   text-align: center;
   font-size: 1.4em;
   color: #8b5fbf;
+  padding-top: 27px;
+}
+/* line 272, ../sass/components/_tenpiece.scss */
+#block-views-text-site-block-1 .views-field-body {
+  font-size: 1.1em;
+  color: #737373;
+  text-align: center;
+  line-height: 1.2em;
+  max-width: 885px;
+  margin: 0 auto;
+}
+/* line 280, ../sass/components/_tenpiece.scss */
+#block-views-text-site-block-1 .views-field-nothing {
+  text-align: center;
+  margin-top: 10px;
 }
 
+/************** footer *****************/
 /************  main menu *************/
-/* line 273, ../sass/components/_tenpiece.scss */
+/* line 292, ../sass/components/_tenpiece.scss */
 #navigation {
   position: relative;
   height: auto;
@@ -2014,16 +2034,16 @@ body {
   padding-top: 10px;
   width: auto;
 }
-/* line 279, ../sass/components/_tenpiece.scss */
+/* line 298, ../sass/components/_tenpiece.scss */
 #navigation a {
   font-size: 1.1em;
   color: #555959;
 }
-/* line 283, ../sass/components/_tenpiece.scss */
+/* line 302, ../sass/components/_tenpiece.scss */
 #navigation li {
   padding: 0 16px !important;
 }
-/* line 286, ../sass/components/_tenpiece.scss */
+/* line 305, ../sass/components/_tenpiece.scss */
 #navigation .menu-2592 {
   border-left: 1px solid;
   margin-left: 16px;
@@ -2031,26 +2051,26 @@ body {
 }
 
 /************  menu store  *************/
-/* line 295, ../sass/components/_tenpiece.scss */
+/* line 314, ../sass/components/_tenpiece.scss */
 #block-views-menu-store-block {
   position: absolute;
   margin-top: -5px;
   background-color: #fff;
 }
 
-/* line 301, ../sass/components/_tenpiece.scss */
+/* line 320, ../sass/components/_tenpiece.scss */
 #block-views-menu-store-block.hide {
   display: none;
 }
 
 /**************** user menu **********/
-/* line 307, ../sass/components/_tenpiece.scss */
+/* line 326, ../sass/components/_tenpiece.scss */
 #block-views-menu-user-block {
   float: left;
 }
 
 /**************** edit product *********/
-/* line 313, ../sass/components/_tenpiece.scss */
+/* line 332, ../sass/components/_tenpiece.scss */
 #edit-field-other, #edit-field-surface, #edit-field-material {
   display: none;
 }

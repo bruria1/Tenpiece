@@ -118,4 +118,6 @@
 
 </div>
 
-<?php print render($page['bottom']); ?>
+<div class="wrapper-bottom">
+  <?php print render($page['bottom']); ?>
+</div>
