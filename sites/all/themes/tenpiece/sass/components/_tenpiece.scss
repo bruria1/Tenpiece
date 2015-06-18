@@ -27,7 +27,7 @@
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
   background-color: $color1;
   border-bottom: 4px solid $color2;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 $default: #555959;
@@ -51,6 +51,10 @@ textarea:focus, input:focus{
     outline: 0;
     outline-style:none;
     outline-width:0;
+}
+
+.block{
+  margin-bottom: 0;
 }
 
 body{
@@ -129,6 +133,7 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
     padding: 10px;
     text-align: center;
     box-sizing: border-box;
+    position: relative;
     @include res(m){
       width: 49%;
       margin-left: 2%;
@@ -165,6 +170,7 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
         width: 100%;
         padding: 24px;
         margin: 0;
+        opacity: 1!important;
         box-sizing: border-box;
         @include res(s-m){
           float: none;
@@ -174,7 +180,7 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
       }
     }
     .views-field-nid{
-      display: block;
+      opacity: 1;
       float: right;
       width: 43.5%;
       padding: 24px 0 10px;
@@ -184,6 +190,9 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
         margin-top: 20px;
         a{
           color: $purple;
+          background-color: transparent;
+          position: relative;
+          padding: 0;
         }
       }
     }
@@ -204,6 +213,10 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
       padding: 3px;
       background-color: #fff;
     }
+  }
+  .image, .title, .design, .price{
+    transition: all 1s;
+    -webkit-transition: all 1s;
   }
   .title, .design{
     font-size: 1.1em;
@@ -236,7 +249,16 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
     }
   }
   .views-field-nid{
-    display: none;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 24px 10px 10px 10px;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    box-sizing: border-box;
+    right: 0;
     .description{
       margin-top: 8px;
       font-size: 1.1em;
@@ -251,6 +273,23 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
       font-size: 1.9em;
       a{
         color: #fff;
+        display: block;
+        width: 100%;
+        background-color: $light-green;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 27px 0;
+      }
+    }
+  }
+  .views-row:hover{
+    .views-field-nid{
+      opacity: 1;
+    }
+    .views-field-title{
+      .image, .title, .design, .price{
+        opacity: 0;
       }
     }
   }
@@ -260,11 +299,96 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
 #block-views-text-site-block-1{
   clear: both;
   .views-field-title{
+    background: url("../images/hp-line.png") no-repeat center top;
     h2{
       font-weight: normal;
       text-align: center;
       font-size: 1.4em;
       color: $purple;
+      padding-top: 27px;
+    }
+  }
+  .views-field-body{
+    font-size: 1.1em;
+    color: #737373;
+    text-align: center;
+    line-height: 1.2em;
+    max-width: 885px;
+    margin: 0 auto;
+  }
+  .views-field-nothing{
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+/************** footer *****************/
+
+.wrapper-bottom{
+  background-color: #333;
+  overflow: hidden;
+  padding: 15px 0;
+  .region-bottom{
+    @include width;
+    color: #fff;
+    a{
+      color: $purple;
+      &:hover{
+        color: $light-purple;
+      }
+    }
+    #block-block-2{
+      float: right;
+      @include res(s-m){
+        width: 100%;
+        text-align: center;
+      }
+    }
+    #block-block-3{
+      float: left;
+      @include res(s-m){
+        width: 100%;
+        text-align: center;
+        margin: 20px 0 20px;
+      }
+      img{
+        margin: 0 0 -4px 13px;
+      }
+    }
+    p{
+      margin: 0;
+    }
+  }
+}
+
+.wrapper-footer{
+  margin-top: 40px;
+  background-color: #4a454f;
+  border-top: 3px solid #aba8ad;
+  .region-footer{
+    @include width;
+    color: #fff;
+    padding: 0px 3%  20px!important;
+    #block-views-text-site-block-2, #block-webform-client-block-85{
+      padding-left: 5%;
+      .form-item{
+        margin-top: 0;
+      }
+
+    }
+    .block{
+      float: right;
+      width: 30%;
+      h2{
+        font-weight: normal;
+        margin: 0;
+        font-size: 1.9em;
+      }
+      .views-field-body{
+        p{
+          margin: 0;
+        }
+      }
     }
   }
 }

@@ -69,6 +69,8 @@
           )); ?>
         </nav>
       <?php endif; ?>
+      <?php print render($page['navigation']); ?>
+
   </header>
 
   <div id="main">
@@ -95,7 +97,6 @@
 
 
 
-      <?php print render($page['navigation']); ?>
 
     </div>
 
@@ -114,8 +115,13 @@
 
   </div>
 
-  <?php print render($page['footer']); ?>
 
 </div>
 
+<div class="wrapper-footer">
+  <?php print render($page['footer']); ?>
+</div>
+
+<div class="wrapper-bottom">
 <?php print render($page['bottom']); ?>
+</div>
