@@ -306,6 +306,7 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
       font-size: 1.4em;
       color: $purple;
       padding-top: 27px;
+<<<<<<< HEAD
     }
   }
   .views-field-body{
@@ -389,9 +390,28 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
           margin: 0;
         }
       }
+=======
+>>>>>>> a9d85deb760576e060e067c04d0a624539c76a71
     }
   }
+  .views-field-body{
+    font-size: 1.1em;
+    color: #737373;
+    text-align: center;
+    line-height: 1.2em;
+    max-width: 885px;
+    margin: 0 auto;
+  }
+  .views-field-nothing{
+    text-align: center;
+    margin-top: 10px;
+  }
 }
+
+/************** footer *****************/
+
+
+
 /************  main menu *************/
 
 #navigation{
