@@ -100,3 +100,39 @@
 [21-Apr-2015 09:52:12 Asia/Jerusalem] PHP Fatal error:  Call to undefined function _drupal_bootstrap_full() in /home/tenpiece/public_html/includes/bootstrap.inc on line 2262
 [21-Apr-2015 09:52:16 Asia/Jerusalem] PHP Parse error:  syntax error, unexpected $end, expecting T_VARIABLE or '$' in /home/tenpiece/public_html/includes/file.inc on line 931
 [21-Apr-2015 09:53:01 Asia/Jerusalem] PHP Parse error:  syntax error, unexpected $end in /home/tenpiece/public_html/modules/field/field.crud.inc on line 423
+[18-Jun-2015 09:24:20 Asia/Jerusalem] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2006 MySQL server has gone away' in /home/tenpiece/public_html/includes/database/database.inc:2171
+Stack trace:
+#0 /home/tenpiece/public_html/includes/database/database.inc(2171): PDOStatement->execute(Array)
+#1 /home/tenpiece/public_html/includes/database/database.inc(683): DatabaseStatementBase->execute(Array, Array)
+#2 /home/tenpiece/public_html/includes/database/database.inc(2350): DatabaseConnection->query('SELECT s.lid, t...', Array, Array)
+#3 /home/tenpiece/public_html/modules/locale/locale.module(720): db_query('SELECT s.lid, t...', Array)
+#4 /home/tenpiece/public_html/includes/bootstrap.inc(1484): locale('Drush command t...', '', 'he')
+#5 /usr/local/src/drush/includes/output.inc(148): t('Drush command t...', Array)
+#6 /usr/local/src/drush/includes/preflight.inc(349): dt('Drush command t...', Array)
+#7 [internal function]: drush_shutdown()
+#8 {main}
+  thrown in /home/tenpiece/public_html/includes/database/database.inc on line 2171
+[18-Jun-2015 09:29:17 Asia/Jerusalem] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2006 MySQL server has gone away' in /home/tenpiece/public_html/includes/database/database.inc:2171
+Stack trace:
+#0 /home/tenpiece/public_html/includes/database/database.inc(2171): PDOStatement->execute(Array)
+#1 /home/tenpiece/public_html/includes/database/database.inc(683): DatabaseStatementBase->execute(Array, Array)
+#2 /home/tenpiece/public_html/includes/database/database.inc(2350): DatabaseConnection->query('SELECT expire, ...', Array, Array)
+#3 /home/tenpiece/public_html/includes/lock.inc(167): db_query('SELECT expire, ...', Array)
+#4 /home/tenpiece/public_html/includes/lock.inc(146): lock_may_be_available('schema:runtime:...')
+#5 /home/tenpiece/public_html/includes/bootstrap.inc(433): lock_acquire('schema:runtime:...')
+#6 /home/tenpiece/public_html/includes/bootstrap.inc(455): DrupalCacheArray->set(Array)
+#7 [internal function]: DrupalCacheArray->__destruct()
+#8 {main}
+  thrown in /home/tenpiece/public_html/includes/database/database.inc on line 2171
+[18-Jun-2015 09:45:57 Asia/Jerusalem] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2006 MySQL server has gone away' in /home/tenpiece/public_html/includes/database/database.inc:2171
+Stack trace:
+#0 /home/tenpiece/public_html/includes/database/database.inc(2171): PDOStatement->execute(Array)
+#1 /home/tenpiece/public_html/includes/database/database.inc(683): DatabaseStatementBase->execute(Array, Array)
+#2 /home/tenpiece/public_html/includes/database/database.inc(2350): DatabaseConnection->query('SELECT s.lid, t...', Array, Array)
+#3 /home/tenpiece/public_html/modules/locale/locale.module(720): db_query('SELECT s.lid, t...', Array)
+#4 /home/tenpiece/public_html/includes/bootstrap.inc(1484): locale('Drush command t...', '', 'he')
+#5 /usr/local/src/drush/includes/output.inc(148): t('Drush command t...', Array)
+#6 /usr/local/src/drush/includes/preflight.inc(349): dt('Drush command t...', Array)
+#7 [internal function]: drush_shutdown()
+#8 {main}
+  thrown in /home/tenpiece/public_html/includes/database/database.inc on line 2171

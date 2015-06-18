@@ -118,15 +118,10 @@
 
 </div>
 
-<<<<<<< HEAD
 <div class="wrapper-footer">
   <?php print render($page['footer']); ?>
 </div>
 
 <div class="wrapper-bottom">
 <?php print render($page['bottom']); ?>
-=======
-<div class="wrapper-bottom">
-  <?php print render($page['bottom']); ?>
->>>>>>> a9d85deb760576e060e067c04d0a624539c76a71
 </div>
