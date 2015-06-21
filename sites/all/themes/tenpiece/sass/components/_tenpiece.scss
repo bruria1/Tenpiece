@@ -21,22 +21,37 @@
   box-sizing: border-box;
 }
 
-@mixin button($color1, $color2){
+@mixin button($color1, $color2, $color3, $color4){
   color: #fff;
   padding: 10px 20px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
   background-color: $color1;
   border-bottom: 4px solid $color2;
   border-radius: 4px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  &:hover{
+    background-color: $color3;
+    border-bottom: 4px solid $color4;
+  }
 }
 
 $default: #555959;
 $light-green: #aacca3;
+$light-green-h: #65ba52;
 $green: #81aa7a;
+$green-h: #3c9b29;
 $light-yellow: #e5ca8f;
+$light-yellow-h: #dcaa37;
 $yellow: #bf9f5f;
+$yellow-h: #af8229;
 $purple: #8b5fbf;
+$purple-h: #4100a8;
 $light-purple: #b08ada;
+$light-purple-h: #8329e8;
 
 a, a:link, a:visited{
   text-decoration: none;
@@ -68,15 +83,19 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
 }
 
 .button-green{
-  @include button($light-green, $green) 
+  @include button($light-green, $green, $light-green-h, $green-h) 
 }
 
 .button-yellow{
-  @include button($light-yellow, $yellow) 
+  @include button($light-yellow, $yellow, $light-yellow-h, $yellow-h) 
 }
 
 .button-purple{
-  @include button($light-purple, $purple) 
+  @include button($light-purple, $purple, $light-purple-h, $purple-h) 
+}
+
+#page-title{
+  font-size: 3em;
 }
 /************  front *************/
 
@@ -121,7 +140,12 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
   }
 }
 
+.logged-in.front .field-name-body .button-yellow{
+  display: none;
+}
+
 #block-views-products-block-1{
+  margin-top: 100px;
   .views-row{
     background-color:#f3f3f3;
     box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.25);
@@ -140,11 +164,6 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
     }
     @include res(s){
       width: 100%;
-      margin-left: 0;
-    }
-  }
-  .views-row-even{
-    @include res(m){
       margin-left: 0;
     }
   }
@@ -183,7 +202,7 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
       opacity: 1;
       float: right;
       width: 43.5%;
-      padding: 24px 0 10px;
+      padding: 24px 24px 10px 0;
       .link{
         background: url("../images/product-line.png") no-repeat center top;
         padding-top: 24px;
@@ -205,6 +224,65 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
   }
   .views-row-7{
     margin-left: 0;
+  }
+}
+
+
+#block-views-text-site-block-1{
+  clear: both;
+  .views-field-title{
+    background: url("../images/hp-line.png") no-repeat center top;
+    h2{
+      font-weight: normal;
+      text-align: center;
+      font-size: 1.4em;
+      color: $purple;
+      padding-top: 27px;
+    }
+  }
+  .views-field-body{
+    font-size: 1.1em;
+    color: #737373;
+    text-align: center;
+    line-height: 1.2em;
+    max-width: 885px;
+    margin: 0 auto;
+  }
+  .views-field-nothing{
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+/************** products *****************/
+
+.view-products{
+  margin-top: 100px;
+  .views-row{
+    background-color:#f3f3f3;
+    box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.25);
+    width: 22%;
+    margin-left: 4%;
+    float: right;
+    margin-bottom: 50px;
+    border:1px solid #e0e0e0;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    @include res(m){
+      width: 49%;
+      margin-left: 2%;
+    }
+    @include res(s){
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+  .views-row-even{
+    @include res(m){
+      margin-left: 0;
+    }
   }
   .image{
     margin: 21px auto 8px;
@@ -254,7 +332,7 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
     position: absolute;
     top: 0;
     width: 100%;
-    padding: 24px 10px 10px 10px;
+    padding: 30px 10px 10px 10px;
     transition: all 1s;
     -webkit-transition: all 1s;
     box-sizing: border-box;
@@ -295,33 +373,6 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
   }
 }
 
-
-#block-views-text-site-block-1{
-  clear: both;
-  .views-field-title{
-    background: url("../images/hp-line.png") no-repeat center top;
-    h2{
-      font-weight: normal;
-      text-align: center;
-      font-size: 1.4em;
-      color: $purple;
-      padding-top: 27px;
-    }
-  }
-  .views-field-body{
-    font-size: 1.1em;
-    color: #737373;
-    text-align: center;
-    line-height: 1.2em;
-    max-width: 885px;
-    margin: 0 auto;
-  }
-  .views-field-nothing{
-    text-align: center;
-    margin-top: 10px;
-  }
-}
-
 /************** footer *****************/
 
 .wrapper-bottom{
@@ -337,7 +388,7 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
         color: $light-purple;
       }
     }
-    #block-block-2{
+    #block-block-4{
       float: right;
       @include res(s-m){
         width: 100%;
@@ -371,10 +422,33 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
     padding: 0px 3%  20px!important;
     #block-views-text-site-block-2, #block-webform-client-block-85{
       padding-left: 5%;
+    }
+    #block-webform-client-block-85{
+      padding-left: 5%;
       .form-item{
         margin-top: 0;
+        margin-bottom: 10px;
       }
-
+      label{
+        color: $default;
+        font-weight: normal;
+        padding: 6px 10px;
+      }
+      input{
+        padding: 6px 10px;
+        border-radius: 4px;
+        border: none;
+      }
+      input.form-submit{
+        @include button($light-green, $green, $light-green-h, $green-h);
+        width: 100%;
+        font-style: 1.3em;
+        padding: 5px 20px;
+        margin-top: 10px;
+      }
+      .form-required{
+        display: none;
+      }
     }
     .block{
       float: right;
@@ -416,24 +490,237 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
 
 /************  menu store  *************/
 
-#block-views-menu-store-block{
+
+#open-menu{
+  @include width;
   position: absolute;
-  margin-top: -5px;
+  margin-top: 49px;
   background-color: #fff;
+  z-index: 200;
+  width: 100%;
+  .item-list{
+    float: right;
+    width: 20%;
+  }
+  h3{
+    margin-top: 0;
+  }
 }
 
-#block-views-menu-store-block.hide{
+#open-menu.hide{
   display: none;
 }
 
-/**************** user menu **********/
+/**************** top icons **********/
 
-#block-views-menu-user-block{
+.user-menu-icon{
   float: left;
+  .menu.hide{
+      display: none;
+  }
+  .menu{
+    left: 98px;
+    position: absolute;
+    top: 59px;
+  }
+}
+
+.top-icons{
+      background: url("../images/top-icons.png") no-repeat;
+      float: left;
+      height: 40px;
+      width: 40px;
+      margin-right: 10px;
+      cursor: pointer;
+}
+
+.shoping-icon{
+  background-position: 0 0;
+  position: relative;
+  .view-content{
+    display: none;
+  }
+  .button-cart, .empty{
+    background-color: #fff;
+    color: $purple;
+    border-radius: 50%;
+    font-size: 0.8em;
+    height: 19px;
+    left: -2px;
+    line-height: 1.2em;
+    min-width: 19px;
+    position: absolute;
+    text-align: center;
+    top: -6px;
+  }
+}
+
+.man-icon{
+  background-position: -50px 0;
+  text-indent: -9999px;
 }
 
 /**************** edit product *********/
 
 #edit-field-other, #edit-field-surface, #edit-field-material{
   display: none;
+}
+
+/**********************************/
+/*           cart                 */
+/**********************************/
+
+.region-cart{
+  @include res(small-medium){
+    display: none;
+  }
+}
+
+#block-commerce-cart-cart{
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  margin-left: -400px;
+  position: fixed;
+  height: 100%;
+  z-index: 350;
+  width: 400px;
+  margin-right: 5px;
+  padding: 10px;
+  box-sizing:border-box;
+  &.open{
+    margin: 0;
+  }
+  .view-header{
+    position: relative;
+    float: right;
+    top: -71px;
+    .close-button{
+      border: 1px solid;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.5em;
+      height: 26px;
+      padding-top: 2px;
+      text-align: center;
+      width: 28px;
+    }
+  }
+  h2{
+    border-bottom: 1px solid;
+    font-weight: normal;
+  }
+    ul.links{
+    width: 100%;
+    left: 0;
+    margin: 10px 0 0 ;
+    li{
+      width: 49%;
+      float: left;
+      text-align: center;
+      padding: 0;
+      a{
+        color: #fff;
+        padding: 10px 20px;
+        display: block;
+        box-sizing: border-box;
+      }
+    }
+    li.first{
+      margin-left: 2%;
+      a{
+        background: url("../images/add-to-cart.png") no-repeat 140% center;
+        transition: all .5s;
+        -webkit-transition: all .5s;
+        &:hover{
+          background: url("../images/add-to-cart.png") no-repeat center center;
+          color: transparent;
+        }
+      }
+    }
+    li.last{
+      a{
+        background: url("../images/bag8.png") no-repeat 132% center;
+        transition: all .5s;
+        -webkit-transition: all .5s;
+        &:hover{
+          background: url("../images/bag8.png") no-repeat center center;
+          color: transparent;
+        }
+      }
+    }
+  }
+}
+
+
+#block-commerce-cart-cart{
+  left: 0;
+  background-color: red;
+  table{
+    width:93%;
+    margin: 30px auto;
+    display: block;
+    tbody{
+      width: 100%;
+      display: block;
+    }
+    tr.even, tr.odd{
+      background-color: transparent;
+      display: block;
+    }
+    td{
+      margin-left: 10px;
+      display: inline-block;
+      padding-top: 15px;
+      padding-bottom: 10px;
+    }
+    .views-field-quantity{
+      margin-left: 0;
+    }
+    .views-field-field-product-defult-image{
+      padding: 5px 0;
+    }
+    .views-field-line-item-title{
+      width: 160px;
+      line-height: 1em;
+      padding-top: 20px;
+    }
+    .views-field-commerce-total{
+      margin-left: 0;
+    }
+  }
+}
+
+/****************   product page *************/
+
+.node-type-product{
+  #page-title{
+    color: $purple;
+  }
+  .field-name-commerce-stock{
+    font-style: 2em;
+    font-weight: lighter;
+  }
+}
+
+.field-name-field-imgs{
+  float: left;
+  max-width: 500px;
+  width: 100%;
+  .field-slideshow-controls{
+      .flex{
+        right: 0;
+        background-position: -18px 0;
+      }
+      .flex{
+        left: 0;
+        background-position: 12px 0;
+      }
+      a{
+          background: url("../images/gallery_arrows.png") no-repeat;
+          display: block!important;
+          opacity: 1!important;
+          text-indent: -9999px;
+          position: absolute;;
+      }
+  }
 }

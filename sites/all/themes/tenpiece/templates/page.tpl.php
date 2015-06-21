@@ -8,6 +8,18 @@
  */
 ?>
 
+<?php print render($page['cart']); ?>
+
+
+<div class="open-menu-wrapper">
+  <div id="open-menu">
+        <?php
+            $my_block = module_invoke('views', 'block_view', 'menu_store-block');
+            print render($my_block['content']); 
+          ?>
+  </div>
+</div>
+
 <div id="page">
 
   <header class="header" id="header" role="banner">
@@ -68,9 +80,30 @@
             ),
           )); ?>
         </nav>
+        </div>
       <?php endif; ?>
       <?php print render($page['navigation']); ?>
+      <div class="shoping-icon top-icons">
+          <?php
+            $my_block = module_invoke('views', 'block_view', 'shopping_top_manu-block_1');
+            print render($my_block['content']); 
+          ?>
+      </div>
+      <?php
+        global $user;
+        if ( $user->uid ) { ?>
+          <div class="user-menu-icon">
+            <div class="man-icon top-icons">user-menu</div>
+            <div class="menu">
+              <?php
+                $my_block = module_invoke('views', 'block_view', 'menu_user-block');
+                print render($my_block['content']); 
+              ?>
+              </div>
+          </div>
+      <?php } ?>
 
+      
   </header>
 
   <div id="main">
@@ -95,10 +128,7 @@
       <?php print $feed_icons; ?>
     </div>
 
-
-
-
-    </div>
+ </div>
 
     <?php
       // Render the sidebars to see if there's anything in them.
@@ -115,13 +145,11 @@
 
   </div>
 
-
-</div>
-
 <div class="wrapper-footer">
   <?php print render($page['footer']); ?>
 </div>
-
-<div class="wrapper-bottom">
-<?php print render($page['bottom']); ?>
 </div>
+<div class="wrapper-bottom">
+  <?php print render($page['bottom']); ?>
+</div>
+

@@ -17,18 +17,44 @@
 Drupal.behaviors.my_custom_behavior = {
   attach: function(context, settings) {
 
-$("#block-views-menu-store-block").addClass("hide");
+/************  cart  **************/
+
+$('.shoping-icon').on('click', function() {
+      $('#block-commerce-cart-cart').addClass("open");
+      $('body').addClass("cart-open");
+});
+/*
+if ( $( "body" ).hasClass( "node-type-product" ) ) {
+  if ($('div.warning').length) {
+        $('#block-commerce-cart-cart').addClass("open");
+        $('body').addClass("cart-open");
+  }
+};
+*/
+$('#block-commerce-cart-cart .close-button').on('click', function() {
+      $('#block-commerce-cart-cart').removeClass("open");
+      $('body').removeClass("cart-open");
+});
+
+$('#main').on('click', function() {
+      $('#block-commerce-cart-cart').removeClass("open");
+      $('body').removeClass("cart-open");
+});
+
+/************  user menu  **************/
+
+$("#open-menu").addClass("hide");
 
 $(document).ready(function(){
     $(".menu-2084 a").hover(function(){
-        $("#block-views-menu-store-block").addClass("display").removeClass("hide");
+        $("#open-menu").addClass("display").removeClass("hide");
         },function(){
-        $("#block-views-menu-store-block").addClass("hide").removeClass("display");
+        $("#open-menu").addClass("hide").removeClass("display");
     });
-    $("#block-views-menu-store-block").hover(function(){
-        $("#block-views-menu-store-block").addClass("display").removeClass("hide");
+    $("#open-menu").hover(function(){
+        $("#open-menu").addClass("display").removeClass("hide");
         },function(){
-        $("#block-views-menu-store-block").addClass("hide").removeClass("display");
+        $("#open-menu").addClass("hide").removeClass("display");
     });
 });
 
@@ -69,6 +95,25 @@ if ($("body").hasClass("front")){
     return false;
   });
 }
+
+$(".user-menu-icon .menu").addClass("hide");
+
+$(".man-icon").click(function(){
+  if ($(".user-menu-icon .menu").hasClass("hide")){
+    $(".user-menu-icon .menu").addClass("display").removeClass("hide");
+  }
+  else if ($(".user-menu-icon .menu").hasClass("display")){
+    $(".user-menu-icon .menu").addClass("hide").removeClass("display");
+  }
+});
+
+$("#main").click(function(){
+  if ($(".user-menu-icon .menu").hasClass("display")){
+    $(".user-menu-icon .menu").addClass("hide").removeClass("display");
+  }
+});
+
+
 
   }
 };
