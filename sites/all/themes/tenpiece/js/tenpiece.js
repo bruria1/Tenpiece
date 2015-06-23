@@ -19,7 +19,11 @@ Drupal.behaviors.my_custom_behavior = {
 
 /************  cart  **************/
 
-$('.shoping-icon').on('click', function() {
+if ($(".view-shopping-top-manu .button-cart").length != 0){
+  $('.shoping-icon').addClass("not-empty");
+}
+
+$('.shoping-icon.not-empty').on('click', function() {
       $('#block-commerce-cart-cart').addClass("open");
       $('body').addClass("cart-open");
 });

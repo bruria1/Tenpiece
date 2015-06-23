@@ -1,0 +1,11 @@
+<?php
+
+
+// translet price
+
+function tenpiece_field_attach_view_alter(&$output, $context) {
+  if (!empty($output['commerce_price'])){
+    $output['commerce_price']['#title'] = t('Price');
+  }
+}
+?>

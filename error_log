@@ -136,3 +136,6 @@ Stack trace:
 #7 [internal function]: drush_shutdown()
 #8 {main}
   thrown in /home/tenpiece/public_html/includes/database/database.inc on line 2171
+[21-Jun-2015 22:05:28 Asia/Jerusalem] PHP Parse error:  syntax error, unexpected '?>' in /home/tenpiece/public_html/sites/all/themes/tenpiece/templates/node--product.tpl.php on line 45
+[21-Jun-2015 22:21:39 Asia/Jerusalem] PHP Parse error:  syntax error, unexpected end of file in /home/tenpiece/public_html/sites/all/themes/tenpiece/template.php on line 159
+[21-Jun-2015 22:21:43 Asia/Jerusalem] PHP Parse error:  syntax error, unexpected end of file in /home/tenpiece/public_html/sites/all/themes/tenpiece/template.php on line 159

@@ -2358,19 +2358,23 @@ body {
   height: 40px;
   width: 40px;
   margin-right: 10px;
+}
+
+/* line 536, ../sass/components/_tenpiece.scss */
+.shoping-icon.not-empty, .man-icon {
   cursor: pointer;
 }
 
-/* line 537, ../sass/components/_tenpiece.scss */
+/* line 539, ../sass/components/_tenpiece.scss */
 .shoping-icon {
   background-position: 0 0;
   position: relative;
 }
-/* line 540, ../sass/components/_tenpiece.scss */
+/* line 542, ../sass/components/_tenpiece.scss */
 .shoping-icon .view-content {
   display: none;
 }
-/* line 543, ../sass/components/_tenpiece.scss */
+/* line 545, ../sass/components/_tenpiece.scss */
 .shoping-icon .button-cart, .shoping-icon .empty {
   background-color: #fff;
   color: #8b5fbf;
@@ -2385,14 +2389,14 @@ body {
   top: -6px;
 }
 
-/* line 558, ../sass/components/_tenpiece.scss */
+/* line 560, ../sass/components/_tenpiece.scss */
 .man-icon {
   background-position: -50px 0;
   text-indent: -9999px;
 }
 
 /**************** edit product *********/
-/* line 565, ../sass/components/_tenpiece.scss */
+/* line 567, ../sass/components/_tenpiece.scss */
 #edit-field-other, #edit-field-surface, #edit-field-material {
   display: none;
 }
@@ -2400,7 +2404,7 @@ body {
 /**********************************/
 /*           cart                 */
 /**********************************/
-/* line 579, ../sass/components/_tenpiece.scss */
+/* line 581, ../sass/components/_tenpiece.scss */
 #block-commerce-cart-cart {
   transition: all 1s;
   -webkit-transition: all 1s;
@@ -2413,17 +2417,17 @@ body {
   padding: 10px;
   box-sizing: border-box;
 }
-/* line 590, ../sass/components/_tenpiece.scss */
+/* line 592, ../sass/components/_tenpiece.scss */
 #block-commerce-cart-cart.open {
   margin: 0;
 }
-/* line 593, ../sass/components/_tenpiece.scss */
+/* line 595, ../sass/components/_tenpiece.scss */
 #block-commerce-cart-cart .view-header {
   position: relative;
   float: right;
   top: -71px;
 }
-/* line 597, ../sass/components/_tenpiece.scss */
+/* line 599, ../sass/components/_tenpiece.scss */
 #block-commerce-cart-cart .view-header .close-button {
   border: 1px solid;
   border-radius: 50%;
@@ -2434,139 +2438,234 @@ body {
   text-align: center;
   width: 28px;
 }
-/* line 608, ../sass/components/_tenpiece.scss */
+/* line 610, ../sass/components/_tenpiece.scss */
 #block-commerce-cart-cart h2 {
   border-bottom: 1px solid;
   font-weight: normal;
 }
-/* line 612, ../sass/components/_tenpiece.scss */
+/* line 614, ../sass/components/_tenpiece.scss */
 #block-commerce-cart-cart ul.links {
   width: 100%;
   left: 0;
   margin: 10px 0 0;
 }
-/* line 616, ../sass/components/_tenpiece.scss */
+/* line 618, ../sass/components/_tenpiece.scss */
 #block-commerce-cart-cart ul.links li {
   width: 49%;
   float: left;
   text-align: center;
   padding: 0;
 }
-/* line 621, ../sass/components/_tenpiece.scss */
+/* line 623, ../sass/components/_tenpiece.scss */
 #block-commerce-cart-cart ul.links li a {
   color: #fff;
   padding: 10px 20px;
   display: block;
   box-sizing: border-box;
 }
-/* line 628, ../sass/components/_tenpiece.scss */
+/* line 630, ../sass/components/_tenpiece.scss */
 #block-commerce-cart-cart ul.links li.first {
   margin-left: 2%;
 }
-/* line 630, ../sass/components/_tenpiece.scss */
+/* line 632, ../sass/components/_tenpiece.scss */
 #block-commerce-cart-cart ul.links li.first a {
   background: url("../images/add-to-cart.png") no-repeat 140% center;
   transition: all .5s;
   -webkit-transition: all .5s;
 }
-/* line 634, ../sass/components/_tenpiece.scss */
+/* line 636, ../sass/components/_tenpiece.scss */
 #block-commerce-cart-cart ul.links li.first a:hover {
   background: url("../images/add-to-cart.png") no-repeat center center;
   color: transparent;
 }
-/* line 641, ../sass/components/_tenpiece.scss */
+/* line 643, ../sass/components/_tenpiece.scss */
 #block-commerce-cart-cart ul.links li.last a {
   background: url("../images/bag8.png") no-repeat 132% center;
   transition: all .5s;
   -webkit-transition: all .5s;
 }
-/* line 645, ../sass/components/_tenpiece.scss */
+/* line 647, ../sass/components/_tenpiece.scss */
 #block-commerce-cart-cart ul.links li.last a:hover {
   background: url("../images/bag8.png") no-repeat center center;
   color: transparent;
 }
 
-/* line 655, ../sass/components/_tenpiece.scss */
+/* line 657, ../sass/components/_tenpiece.scss */
 #block-commerce-cart-cart {
   left: 0;
   background-color: red;
 }
-/* line 658, ../sass/components/_tenpiece.scss */
+/* line 660, ../sass/components/_tenpiece.scss */
 #block-commerce-cart-cart table {
   width: 93%;
   margin: 30px auto;
   display: block;
 }
-/* line 662, ../sass/components/_tenpiece.scss */
+/* line 664, ../sass/components/_tenpiece.scss */
 #block-commerce-cart-cart table tbody {
   width: 100%;
   display: block;
 }
-/* line 666, ../sass/components/_tenpiece.scss */
+/* line 668, ../sass/components/_tenpiece.scss */
 #block-commerce-cart-cart table tr.even, #block-commerce-cart-cart table tr.odd {
   background-color: transparent;
   display: block;
 }
-/* line 670, ../sass/components/_tenpiece.scss */
+/* line 672, ../sass/components/_tenpiece.scss */
 #block-commerce-cart-cart table td {
   margin-left: 10px;
   display: inline-block;
   padding-top: 15px;
   padding-bottom: 10px;
 }
-/* line 676, ../sass/components/_tenpiece.scss */
+/* line 678, ../sass/components/_tenpiece.scss */
 #block-commerce-cart-cart table .views-field-quantity {
   margin-left: 0;
 }
-/* line 679, ../sass/components/_tenpiece.scss */
+/* line 681, ../sass/components/_tenpiece.scss */
 #block-commerce-cart-cart table .views-field-field-product-defult-image {
   padding: 5px 0;
 }
-/* line 682, ../sass/components/_tenpiece.scss */
+/* line 684, ../sass/components/_tenpiece.scss */
 #block-commerce-cart-cart table .views-field-line-item-title {
   width: 160px;
   line-height: 1em;
   padding-top: 20px;
 }
-/* line 687, ../sass/components/_tenpiece.scss */
+/* line 689, ../sass/components/_tenpiece.scss */
 #block-commerce-cart-cart table .views-field-commerce-total {
   margin-left: 0;
 }
 
 /****************   product page *************/
-/* line 696, ../sass/components/_tenpiece.scss */
+/* line 698, ../sass/components/_tenpiece.scss */
 .node-type-product #page-title {
   color: #8b5fbf;
 }
-/* line 699, ../sass/components/_tenpiece.scss */
+/* line 701, ../sass/components/_tenpiece.scss */
 .node-type-product .field-name-commerce-stock {
-  font-style: 2em;
+  font-size: 2em;
   font-weight: lighter;
+  margin-top: 14px;
+  margin-bottom: 20px;
+}
+/* line 707, ../sass/components/_tenpiece.scss */
+.node-type-product .right {
+  float: right;
+  width: 50%;
+}
+/* line 711, ../sass/components/_tenpiece.scss */
+.node-type-product .left {
+  float: left;
+  width: 50%;
+  max-width: 500px;
+}
+/* line 716, ../sass/components/_tenpiece.scss */
+.node-type-product .field-label {
+  font-weight: normal;
+}
+/* line 719, ../sass/components/_tenpiece.scss */
+.node-type-product .field {
+  margin-top: 5px;
+}
+/* line 723, ../sass/components/_tenpiece.scss */
+.node-type-product .field-name-field-desighner .field-item, .node-type-product .field-name-field-material .field-item {
+  color: #8b5fbf;
+  font-weight: bold;
+}
+/* line 728, ../sass/components/_tenpiece.scss */
+.node-type-product #comments {
+  clear: both;
+}
+/* line 731, ../sass/components/_tenpiece.scss */
+.node-type-product input#edit-quantity {
+  font-size: 3em;
+  font-weight: lighter;
+  border: none;
+  width: 68px;
+  text-align: center;
+}
+/* line 738, ../sass/components/_tenpiece.scss */
+.node-type-product .commerce-quantity-plusminus-link {
+  top: -12px;
+  position: relative;
+}
+/* line 741, ../sass/components/_tenpiece.scss */
+.node-type-product .commerce-quantity-plusminus-link a {
+  background-color: #b08ada;
+  color: #fff;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+}
+/* line 750, ../sass/components/_tenpiece.scss */
+.node-type-product .commerce-quantity-plusminus-link a:hover {
+  background-color: #8b5fbf;
+  color: #fff;
+}
+/* line 757, ../sass/components/_tenpiece.scss */
+.node-type-product .commerce-add-to-cart label {
+  font-size: 2em;
+  color: #8b5fbf;
+  font-weight: normal;
+  float: right;
+  margin-left: 35px;
+}
+/* line 763, ../sass/components/_tenpiece.scss */
+.node-type-product .commerce-add-to-cart label:after {
+  content: ":";
+}
+/* line 767, ../sass/components/_tenpiece.scss */
+.node-type-product .commerce-add-to-cart input#edit-submit {
+  color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+  background-color: #b08ada;
+  border-bottom: 4px solid #8b5fbf;
+  border-radius: 4px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  background: url("../images/add-to-cart.png") no-repeat center -100% #8b5fbf;
+}
+/* line 36, ../sass/components/_tenpiece.scss */
+.node-type-product .commerce-add-to-cart input#edit-submit:hover {
+  background-color: #8329e8;
+  border-bottom: 4px solid #4100a8;
+}
+/* line 770, ../sass/components/_tenpiece.scss */
+.node-type-product .commerce-add-to-cart input#edit-submit:hover {
+  background: url("../images/add-to-cart.png") no-repeat center center #8b5fbf;
 }
 
-/* line 705, ../sass/components/_tenpiece.scss */
+/* line 777, ../sass/components/_tenpiece.scss */
 .field-name-field-imgs {
-  float: left;
-  max-width: 500px;
-  width: 100%;
+  position: relative;
 }
-/* line 710, ../sass/components/_tenpiece.scss */
-.field-name-field-imgs .field-slideshow-controls .flex {
-  right: 0;
+/* line 780, ../sass/components/_tenpiece.scss */
+.field-name-field-imgs .field-slideshow-controls .prev {
+  right: 5px;
   background-position: -18px 0;
 }
-/* line 714, ../sass/components/_tenpiece.scss */
-.field-name-field-imgs .field-slideshow-controls .flex {
+/* line 784, ../sass/components/_tenpiece.scss */
+.field-name-field-imgs .field-slideshow-controls .next {
   left: 0;
   background-position: 12px 0;
 }
-/* line 718, ../sass/components/_tenpiece.scss */
+/* line 788, ../sass/components/_tenpiece.scss */
 .field-name-field-imgs .field-slideshow-controls a {
   background: url("../images/gallery_arrows.png") no-repeat;
-  display: block !important;
-  opacity: 1 !important;
-  text-indent: -9999px;
+  height: 33px;
   position: absolute;
+  text-indent: -9999px;
+  top: 45%;
+  width: 35px;
+  z-index: 200;
 }
 
 /**

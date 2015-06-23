@@ -531,9 +531,11 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
       height: 40px;
       width: 40px;
       margin-right: 10px;
-      cursor: pointer;
 }
 
+.shoping-icon.not-empty, .man-icon{
+  cursor: pointer;
+}
 .shoping-icon{
   background-position: 0 0;
   position: relative;
@@ -697,30 +699,100 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
     color: $purple;
   }
   .field-name-commerce-stock{
-    font-style: 2em;
+    font-size: 2em;
     font-weight: lighter;
+    margin-top: 14px;
+    margin-bottom: 20px;
+  }
+  .right{
+    float: right;
+    width: 50%;
+  }
+  .left{
+    float: left;
+    width: 50%;
+    max-width: 500px;
+  }
+  .field-label{
+    font-weight: normal;
+  }
+  .field{
+    margin-top: 5px;
+  }
+  .field-name-field-desighner, .field-name-field-material{
+    .field-item{
+      color: $purple;
+      font-weight: bold;
+    }
+  }
+  #comments{
+    clear: both;
+  }
+  input#edit-quantity{
+    font-size: 3em;
+    font-weight: lighter;
+    border:none;
+    width: 68px;
+    text-align: center;
+  }
+  .commerce-quantity-plusminus-link{
+    top:-12px;
+    position: relative;
+    a{
+      background-color: $light-purple;
+      color: #fff;
+      border-radius: 50%;
+      padding: 0;
+      margin: 0;
+      display: inline-block;
+      width: 26px;
+      height: 26px;
+      &:hover{
+        background-color: $purple;
+        color: #fff;
+      }
+    }
+  }
+  .commerce-add-to-cart{
+    label{
+      font-size: 2em;
+      color: $purple;
+      font-weight: normal;
+      float: right;
+      margin-left: 35px;
+      &:after{
+        content:":";
+      }
+    }
+    input#edit-submit{
+      @include button($light-purple, $purple, $light-purple-h, $purple-h);
+      background: url("../images/add-to-cart.png") no-repeat center -100% $purple;
+      &:hover{
+        background: url("../images/add-to-cart.png") no-repeat center center $purple;
+      }
+    }
   }
 }
 
 .field-name-field-imgs{
-  float: left;
-  max-width: 500px;
-  width: 100%;
+  position: relative;
   .field-slideshow-controls{
-      .flex{
-        right: 0;
+      .prev{
+        right: 5px;
         background-position: -18px 0;
       }
-      .flex{
+      .next{
         left: 0;
         background-position: 12px 0;
       }
       a{
           background: url("../images/gallery_arrows.png") no-repeat;
-          display: block!important;
-          opacity: 1!important;
+          height: 33px;
+          position: absolute;
           text-indent: -9999px;
-          position: absolute;;
+          top: 45%;
+          width: 35px;
+          z-index: 200;
       }
   }
 }
