@@ -95,7 +95,8 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
 }
 
 #page-title{
-  font-size: 3em;
+  font-size: 2.5em;
+  font-weight: normal;
 }
 /************  front *************/
 
@@ -699,7 +700,7 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
     color: $purple;
   }
   .field-name-commerce-stock{
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: lighter;
     margin-top: 14px;
     margin-bottom: 20px;
@@ -729,17 +730,19 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
     clear: both;
   }
   input#edit-quantity{
-    font-size: 3em;
+    font-size: 2em;
     font-weight: lighter;
     border:none;
     width: 68px;
     text-align: center;
   }
+  .form-item-quantity{
+    float: right;
+  }
   .commerce-quantity-plusminus-link{
     top:-12px;
     position: relative;
-    a{
-      background-color: $light-purple;
+    background-color: $light-purple;
       color: #fff;
       border-radius: 50%;
       padding: 0;
@@ -753,22 +756,99 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
       }
     }
   }
+  .field-name-commerce-price{
+  }
+  .commerce-product-field-commerce-price{
+    clear: right;
+    .price-amount{
+      font-size: 1.5em;
+      color: $default;
+      font-weight: bold;
+    }
+    .price-label{
+      font-size: 1.5em;
+      color: $purple;
+      padding: 0;
+    }
+  }
+  .commerce-price-savings-formatter-list{
+    color: #8a8a8a;
+    float: right;
+    .price-amount{
+      font-weight: normal;
+    }
+  }
+  .commerce-price-savings-formatter-price{
+    border: none;
+  }
   .commerce-add-to-cart{
+    position: relative;
     label{
-      font-size: 2em;
+      font-size: 1.5em;
       color: $purple;
       font-weight: normal;
       float: right;
       margin-left: 35px;
+      padding-top: 20px;
       &:after{
         content:":";
       }
     }
     input#edit-submit{
+      position: absolute;
+      top: 116px;
+      left: 0;
       @include button($light-purple, $purple, $light-purple-h, $purple-h);
-      background: url("../images/add-to-cart.png") no-repeat center -100% $purple;
+      background-position: center -100%;
+      float: left;
       &:hover{
         background: url("../images/add-to-cart.png") no-repeat center center $purple;
+        color:  transparent;
+      }
+    }
+  }
+  .group-more-details{
+    font-family: 'Open Sans Hebrew', sans-serif;
+    .accordion-item{
+      background-image: none;
+      border:1px solid #d6d7d6;
+      border-radius: 0;
+      margin-top: 0;
+      height: 60px;
+      padding-right: 7%;
+      line-height: 2em;
+      box-sizing:border-box;
+      a{
+        color: #fff;
+        font-size: 1em;
+      }
+      span{
+        display: none;
+      }
+    }
+    #ui-accordion-1-header-0{
+      background: url("../images/icon-tab-1.png") no-repeat 99% center #b3b3b3;
+      &:hover, &.ui-state-active{
+        background-color: $light-green;
+      }
+    }
+    #ui-accordion-1-header-1{
+      background: url("../images/icon-tab-2.png") no-repeat 99% center #b3b3b3;
+      &:hover, &.ui-state-active{
+        background-color: $light-green;
+      }
+    }
+    #ui-accordion-1-header-2{
+      background: url("../images/icon-tab-3.png") no-repeat 99% center #b3b3b3;
+      &:hover, &.ui-state-active{
+        background-color: $light-green;
+      }
+    }
+    .field-group-accordion-item{
+      height: auto!important;
+      border:none;
+      p{
+        margin: 0;
       }
     }
   }
