@@ -92,8 +92,15 @@
       <?php
         global $user;
         if ( $user->uid ) { ?>
-          <div class="user-menu-icon">
-            <div class="man-icon top-icons">user-menu</div>
+          <div class="user-menu-icon hide">
+            <div class="man-icon top-icons">
+              <div class="number-man-icon">
+              <?php
+                $my_block = module_invoke('views', 'block_view', 'tender_product-block_2');
+                print render($my_block['content']); 
+              ?>
+              </div>
+            </div>
             <div class="menu">
               <?php
                 $my_block = module_invoke('views', 'block_view', 'menu_user-block');

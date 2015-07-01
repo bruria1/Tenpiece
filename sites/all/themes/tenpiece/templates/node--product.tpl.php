@@ -35,6 +35,7 @@
     hide($content['comments']);
     hide($content['links']);
     hide($content['field_imgs']);
+    hide($content['group_more_details']);
     ?>
     <div class="left">
       <?php print render($content['field_imgs']); ?>
@@ -45,11 +46,6 @@
        <a href="/node/<?php print $node->nid?>/clone/confirm">רוצה ליצור מוצר דומה?</a>
        <?php } ?>
       </div>
-      <?php
-        $my_block = module_invoke('views', 'block_view', 'reviews_product_page-block');
-        print render($my_block['subject']);
-        print render($my_block['content']); 
-      ?>
     </div>
     <div class="right">
       <?php
@@ -57,9 +53,21 @@
       ?>
     </div>
 
-    
-  <?php print render($content['links']); ?>
-
-  <?php print render($content['comments']); ?>
 
 </article>
+  <div class="bottom-wrapper">
+    <div class="bottom-content">
+      <div class="bottom-right">
+        <?php
+        print render($content['group_more_details']);
+        ?>
+      </div>
+      <div class="bottom-left">
+        <?php
+          $my_block = module_invoke('views', 'block_view', 'reviews_product_page-block');?>
+          <h2 class="title-comment"><?php print render($my_block['subject']);?></h2>
+          <?php print render($my_block['content']); 
+        ?>
+      </div>
+    </div>
+  </div>

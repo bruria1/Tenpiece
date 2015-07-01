@@ -24,7 +24,7 @@
 @mixin button($color1, $color2, $color3, $color4){
   color: #fff;
   padding: 10px 20px;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.4);
   background-color: $color1;
   border-bottom: 4px solid $color2;
   border-radius: 4px;
@@ -83,20 +83,40 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
 }
 
 .button-green{
-  @include button($light-green, $green, $light-green-h, $green-h) 
+  @include button($light-green, $green, $light-green-h, $green-h);
 }
 
 .button-yellow{
-  @include button($light-yellow, $yellow, $light-yellow-h, $yellow-h) 
+  @include button($light-yellow, $yellow, $light-yellow-h, $yellow-h); 
 }
 
 .button-purple{
-  @include button($light-purple, $purple, $light-purple-h, $purple-h) 
+  @include button($light-purple, $purple, $light-purple-h, $purple-h); 
 }
 
 #page-title{
   font-size: 2.5em;
   font-weight: normal;
+}
+#header{
+  padding: 0;
+  position: relative;
+}
+
+.breadcrumb{
+  background-color: #f2f2f2;
+  ol{
+    @include width;
+    color: #333;
+    padding: 15px 3%;
+    a{
+      color: #333;
+    }
+  }
+}
+
+#main{
+  padding-top: 30px;
 }
 /************  front *************/
 
@@ -181,7 +201,7 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
     }
     .views-field-title{
       float: left;
-      width: 56.5%;
+      width: 58.6%;
       .title, .design, .price{
         display: none;
       }
@@ -280,6 +300,9 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
       margin-left: 0;
     }
   }
+  .views-row.place4{
+    margin-left: 0;
+  }
   .views-row-even{
     @include res(m){
       margin-left: 0;
@@ -298,7 +321,7 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
     -webkit-transition: all 1s;
   }
   .title, .design{
-    font-size: 1.1em;
+    font-size: 1.5em;
     a{
       color: $default;
     }
@@ -308,6 +331,11 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
       margin: 16px auto 0;
       tr{
         border:none;
+      }
+    }
+    .commerce-price-savings-formatter-prices-unchanged{
+      td{
+        padding-bottom: 5px;
       }
     }
     .commerce-price-savings-formatter-prices-down{
@@ -516,13 +544,48 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
 
 .user-menu-icon{
   float: left;
-  .menu.hide{
+  &.hide .menu{
       display: none;
   }
   .menu{
-    left: 98px;
+    background-color: #f2f2f2;
+    border: 1px solid #c4c4c4;
+    border-radius: 0 0 3px 3px;
+    left: -25px;
     position: absolute;
-    top: 59px;
+    top: 57px;
+    z-index: 300;
+    .views-field{
+      border-bottom: 1px solid #c4c4c4;
+      padding: 5px 25px;
+      text-align: center;
+    }
+    .views-field-nothing-1{
+      border-bottom: none;
+    }
+    .views-field-nothing .number{
+      background-color: $purple;
+      border-radius: 50%;
+      color: #fff;
+      display: inline-block;
+      margin-right: 10px;
+      width: 23px;
+    }
+  }
+  .menu:after, .menu:before {
+      border-left: 13px solid transparent;
+      border-right: 13px solid transparent;
+      border-bottom: 13px solid #f2f2f2;
+      top: -13px;
+      content: '';
+      left: 42%;
+      position: absolute;
+  }
+  .menu:before {
+    border-bottom: 13px solid;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    top: -13px;
   }
 }
 
@@ -537,13 +600,17 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
 .shoping-icon.not-empty, .man-icon{
   cursor: pointer;
 }
+
 .shoping-icon{
   background-position: 0 0;
   position: relative;
   .view-content{
     display: none;
   }
-  .button-cart, .empty{
+}
+
+.top-icons{
+  .button-cart, .empty, .number-man-icon .view-header{
     background-color: #fff;
     color: $purple;
     border-radius: 50%;
@@ -560,7 +627,7 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
 
 .man-icon{
   background-position: -50px 0;
-  text-indent: -9999px;
+  position: relative;
 }
 
 /**************** edit product *********/
@@ -631,22 +698,18 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
     li.first{
       margin-left: 2%;
       a{
-        background: url("../images/add-to-cart.png") no-repeat 140% center;
         transition: all .5s;
         -webkit-transition: all .5s;
         &:hover{
-          background: url("../images/add-to-cart.png") no-repeat center center;
           color: transparent;
         }
       }
     }
     li.last{
       a{
-        background: url("../images/bag8.png") no-repeat 132% center;
         transition: all .5s;
         -webkit-transition: all .5s;
         &:hover{
-          background: url("../images/bag8.png") no-repeat center center;
           color: transparent;
         }
       }
@@ -696,14 +759,38 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
 /****************   product page *************/
 
 .node-type-product{
+  .similar-product{
+        padding-top: 20px;
+        a{
+          color: $purple;
+          font-size: 1.3em;
+          float: left;
+          background: url("../images/clone-icon.png") no-repeat right center;
+          padding: 5px 40px 5px 0;
+        }
+  }
+  #page{
+    width: 100%;
+    padding: 20px 0 0 0;
+  }
+  #content{
+    width: 100%;
+    padding: 0;
+  }
+  #header, #page-title{
+    @include width;
+  }
+  article{
+    @include width;
+  }
   #page-title{
     color: $purple;
   }
   .field-name-commerce-stock{
     font-size: 1.5em;
     font-weight: lighter;
-    margin-top: 14px;
-    margin-bottom: 20px;
+    margin-top: 14px!important;
+    margin-bottom: 5px;
   }
   .right{
     float: right;
@@ -711,8 +798,7 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
   }
   .left{
     float: left;
-    width: 50%;
-    max-width: 500px;
+    width: 42%;
   }
   .field-label{
     font-weight: normal;
@@ -733,77 +819,111 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
     font-size: 2em;
     font-weight: lighter;
     border:none;
-    width: 68px;
+    width: 38px;
     text-align: center;
   }
   .form-item-quantity{
     float: right;
-  }
-  .commerce-quantity-plusminus-link{
-    top:-12px;
-    position: relative;
-    background-color: $light-purple;
-      color: #fff;
-      border-radius: 50%;
-      padding: 0;
-      margin: 0;
-      display: inline-block;
-      width: 26px;
-      height: 26px;
-      &:hover{
-        background-color: $purple;
-        color: #fff;
-      }
+    margin-bottom: 10px;
+    span:nth-child(2) a{
+      top:-8px;
+      right: 0px;
     }
-  }
-  .field-name-commerce-price{
-  }
-  .commerce-product-field-commerce-price{
-    clear: right;
-    .price-amount{
-      font-size: 1.5em;
-      color: $default;
-      font-weight: bold;
-    }
-    .price-label{
-      font-size: 1.5em;
-      color: $purple;
-      padding: 0;
-    }
-  }
-  .commerce-price-savings-formatter-list{
-    color: #8a8a8a;
-    float: right;
-    .price-amount{
-      font-weight: normal;
-    }
-  }
-  .commerce-price-savings-formatter-price{
-    border: none;
-  }
-  .commerce-add-to-cart{
-    position: relative;
     label{
       font-size: 1.5em;
       color: $purple;
       font-weight: normal;
       float: right;
-      margin-left: 35px;
-      padding-top: 20px;
+      margin-left: 15px;
+      padding-top: 10px;
       &:after{
-        content:":";
+        content: ":";
       }
     }
+  }
+  .commerce-quantity-plusminus-link{
+    top:-2px;
+    position: relative;
+    background-color: $light-purple;
+    border-radius: 50%;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    &:hover{
+      background-color: $purple;
+    }
+    a{
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      color: #fff;
+      position: absolute;
+      top:-7px;
+      right: -2px;
+      &:hover{
+        color: #fff;
+        background-color: transparent;
+      }
+    }
+  }
+  .commerce-product-field{
+    clear: both;
+    table{
+      margin: 9px 0 0 0;
+    }
+    .field-label{
+      font-size: 1.5em;
+      color: $purple;
+      font-weight: normal;
+      float: right;
+      margin-left: 15px;
+      padding-top: 11px;
+    }
+    .commerce-price-savings-formatter-price{
+      float: right;
+      border:none;
+      .price-amount{
+        font-size: 1.5em;
+        color: $default;
+        font-weight: bold;
+        padding: 0;
+      }
+    }
+    .commerce-price-savings-formatter-list{
+      border:none;
+      float: right;
+      .price-amount{
+        padding: 0;
+        font-weight: normal;
+        color: #8a8a8a;
+        float: right;
+        font-size: 1.5em;
+      }
+    }
+  }
+  .commerce-add-to-cart{
+    position: relative;
     input#edit-submit{
       position: absolute;
-      top: 116px;
       left: 0;
       @include button($light-purple, $purple, $light-purple-h, $purple-h);
       background-position: center -100%;
       float: left;
+      width: 230px;
+      top: 70px;
       &:hover{
         background: url("../images/add-to-cart.png") no-repeat center center $purple;
         color:  transparent;
+      }
+    }
+    input.form-button-disabled{
+      float: right!important;
+      left: auto!important;
+      clear: right;
+      &:hover{
+        background-image:none!important;
+        color: #fff!important;
+        background-color: $light-purple!important;
+        border-bottom: 4px solid $purple!important;
       }
     }
   }
@@ -814,9 +934,9 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
       border:1px solid #d6d7d6;
       border-radius: 0;
       margin-top: 0;
-      height: 60px;
       padding-right: 7%;
-      line-height: 2em;
+      background: url("../images/product-page-icon.png") no-repeat #b3b3b3;
+      background-size: 20px;
       box-sizing:border-box;
       a{
         color: #fff;
@@ -827,19 +947,21 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
       }
     }
     #ui-accordion-1-header-0{
-      background: url("../images/icon-tab-1.png") no-repeat 99% center #b3b3b3;
+      background-position:  99% -78px;
       &:hover, &.ui-state-active{
         background-color: $light-green;
       }
     }
     #ui-accordion-1-header-1{
-      background: url("../images/icon-tab-2.png") no-repeat 99% center #b3b3b3;
+      background-position: 99% -131px;
+      background-size: 24px;
       &:hover, &.ui-state-active{
         background-color: $light-green;
       }
     }
     #ui-accordion-1-header-2{
-      background: url("../images/icon-tab-3.png") no-repeat 99% center #b3b3b3;
+      background-position:  99% -169px;
+      background-size: 24px;
       &:hover, &.ui-state-active{
         background-color: $light-green;
       }
@@ -850,6 +972,154 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
       p{
         margin: 0;
       }
+    }
+  }
+}
+
+/*   wrapper bottom  */
+.node-type-product{
+  .action-links{
+    display: none;
+  }
+  .bottom-wrapper{
+    border-top:1px solid #f2f2f2;
+    border-bottom:1px solid #f2f2f2;
+    padding-top: 40px;
+    margin-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    .bottom-content{
+      @include width;
+      .bottom-right{
+        float: right;
+        width: 50%;
+        @include res(s-m){
+          width: 100%;
+        }
+      }
+      .bottom-left{
+        width: 42%;
+        float: left;
+        @include res(s-m){
+          width: 100%;
+        }
+      }
+    }
+  }
+  .bottom-left{
+    position: relative;
+    h2.title-comment{
+      background: url("../images/product-page-icon.png") no-repeat scroll 99% 10px / 25px auto;
+      margin: 0;
+      font-size: 1.2em;
+      font-weight: normal;
+      padding: 2px 37px;
+      border-bottom: 1px solid #d1d1d1;
+      margin-bottom: 10px;
+    }
+    .view-reviews-product-page{
+      .views-slideshow-controls-text{
+        position: absolute;
+        top: 0;
+        left: 0;
+        .views-slideshow-controls-text-pause{
+          display: none;
+        }
+        span a{
+          background: url("../images/arrows.png") no-repeat scroll;
+          display: inline-block;
+          height: 25px;
+          text-indent: -9999px;
+          width: 14px;
+        }
+        .views-slideshow-controls-text-previous a{
+          background-position: 0 0 ;
+
+        }
+        .views-slideshow-controls-text-next a{
+          background-position: 0 -25px ;
+          margin-right: 80px;
+        }
+      }
+      .views-field-name{
+        color: $light-yellow-h;
+      }
+      .views-slideshow-cycle-main-frame-row{
+        left: auto!important;
+        width: 100%;
+        .views-field-field-rating{
+          float: left;
+          .form-item{
+            margin: 0 50px 30px 0;
+          }
+        }
+        .views-field-comment-body{
+          p{
+            margin: 0;
+          }
+        }
+        .views-row{
+          clear: both;
+          margin-bottom: 30px;
+        }
+        .star{
+          background-image: none;
+          height: 16px!important;
+          width: 20px;
+        }
+        .star span{
+          background: url("../images/star.png") no-repeat scroll;
+          background-size: 17px;
+          width: 21px;
+        }
+        .star span.on{
+          background-position: 3px -39px;
+        }
+        .star .off{
+          background-position: 3px -1px;
+        }
+      }
+    }
+  }
+  .view-reviews-product-page.view-display-id-block_2{
+    #edit-field-rating{
+      float: right;
+      width: 65%;
+          .star{
+            background-image: none;
+            height: 20px;
+            width: 25px;
+            padding-top: 11px;
+          }
+          .star a{
+            background: url("../images/star.png") no-repeat scroll;
+          }
+          .star.on a{
+            background-position: 0 -45px;
+          }
+          .star.hover a{
+            background-position: 0 -21px;
+          }
+          label{
+            position: relative;
+            font-size: 1.5em;
+            float: right;
+          }
+    }
+    .view-header h2{
+      color: #fff;
+      background: url("../images/product-page-icon.png") no-repeat scroll 99% -25px / 25px auto $light-yellow;
+      font-size: 1.2em;
+      font-weight: normal;
+      padding: 2px 37px;
+      margin-top: 0;
+    }
+    .node-title{
+      display: none;
+    }
+    article{
+      padding: 0;
     }
   }
 }
@@ -874,5 +1144,58 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
           width: 35px;
           z-index: 200;
       }
+  }
+}
+
+.region-content-bottom{
+  @include width();
+  #block-views-products-block-3{
+    clear: both;
+    .block-title{
+      font-weight: normal;
+      font-size: 1.8em;
+      border-bottom: 1px solid #bfbfbf;
+      text-align: center;
+      width: 380px;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    .view-products{
+      clear: both;
+      margin-top: 40px;
+    }
+  }
+}
+
+/***********  comments *************/
+
+#comments{
+ input, textarea{
+  border:1px solid #c3c3c3;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+ } 
+ label{
+  font-weight: normal;
+  padding: 10px;
+  font-size: 1.1em;
+ }
+ .grippie, .form-required{
+  display: none;
+ }
+ input.form-submit{
+  @include button($light-yellow, $yellow, $light-yellow-h, $yellow-h);
+  float: left;
+  padding: 5px 40px;
+  font-weight: bold;
+  font-size: 1.5em;
+  width: auto;
+ }
+}
+
+.logged-in{
+  #comment-form > div:first-child > div:first-child{
+    display: none;
   }
 }

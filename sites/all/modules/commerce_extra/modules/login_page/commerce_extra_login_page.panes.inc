@@ -48,11 +48,7 @@ function commerce_extra_login_page_login_pane_checkout_form($form, &$form_state,
   $form = user_login_block($form);
 
   // Modify elements to suit our case
-  $items = array();
-  $currentpath = current_path();
-  $items[] = l(t('Create new account'), "user/register", array('attributes' => array('title' => t('Create a new user account.'),'class'=>'register'),'query'=> array( 'destination' => $currentpath)));
-  $items[] = l(t('Request new password'), "user/password", array('attributes' => array('title' => t('Request new password via e-mail.'),'query'=> array( 'destination' => $currentpath))));
-  $form['links']['#markup'] = theme('item_list', array('items' => $items));
+  $form['name']['#title'] = t('E-mail address');
   $form['name']['#required'] = FALSE;
   $form['pass']['#required'] = FALSE;
 

@@ -21,20 +21,13 @@ Drupal.behaviors.my_custom_behavior = {
 
 if ($(".view-shopping-top-manu .button-cart").length != 0){
   $('.shoping-icon').addClass("not-empty");
-}
+};
 
 $('.shoping-icon.not-empty').on('click', function() {
       $('#block-commerce-cart-cart').addClass("open");
       $('body').addClass("cart-open");
 });
-/*
-if ( $( "body" ).hasClass( "node-type-product" ) ) {
-  if ($('div.warning').length) {
-        $('#block-commerce-cart-cart').addClass("open");
-        $('body').addClass("cart-open");
-  }
-};
-*/
+
 $('#block-commerce-cart-cart .close-button').on('click', function() {
       $('#block-commerce-cart-cart').removeClass("open");
       $('body').removeClass("cart-open");
@@ -45,7 +38,45 @@ $('#main').on('click', function() {
       $('body').removeClass("cart-open");
 });
 
+/*******  product   *******/
+
+if ($("body").hasClass("node-type-product")) {
+   $i = 1;
+   $("#block-views-products-block-3 .views-row").each(function(){
+     $class = "place"+$i++;
+     $(this).addClass($class); 
+     if ($i>4) { $i=1;}
+    });
+};
+
+/********  hide control if only one image  **********/
+
+$image_number=$('.field-slideshow > div').length;
+if ($image_number==1){
+    $(".field-slideshow-controls").css({ display: "none" });
+};
+
 /************  user menu  **************/
+
+$(".man-icon").click(function(){
+  if ($(".user-menu-icon").hasClass("hide")){
+    $(".user-menu-icon").addClass("display").removeClass("hide");
+  }
+  else if ($(".user-menu-icon").hasClass("display")){
+    $(".user-menu-icon").addClass("hide").removeClass("display");
+  }
+});
+
+$("#main").click(function(){
+  if ($(".user-menu-icon").hasClass("display")){
+    $(".user-menu-icon").addClass("hide").removeClass("display");
+  }
+});
+
+$number_tender=$(".number-man-icon .view-header").html();
+$( ".user-menu-icon .menu .views-field-nothing" ).append('<span class="number"></span>');
+$( ".user-menu-icon .menu .views-field-nothing .number" ).append($number_tender);
+
 
 $("#open-menu").addClass("hide");
 
@@ -100,22 +131,7 @@ if ($("body").hasClass("front")){
   });
 }
 
-$(".user-menu-icon .menu").addClass("hide");
 
-$(".man-icon").click(function(){
-  if ($(".user-menu-icon .menu").hasClass("hide")){
-    $(".user-menu-icon .menu").addClass("display").removeClass("hide");
-  }
-  else if ($(".user-menu-icon .menu").hasClass("display")){
-    $(".user-menu-icon .menu").addClass("hide").removeClass("display");
-  }
-});
-
-$("#main").click(function(){
-  if ($(".user-menu-icon .menu").hasClass("display")){
-    $(".user-menu-icon .menu").addClass("hide").removeClass("display");
-  }
-});
 
 
 

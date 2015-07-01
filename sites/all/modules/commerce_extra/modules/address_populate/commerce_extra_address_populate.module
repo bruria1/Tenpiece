@@ -13,9 +13,8 @@
  *
  */
 function commerce_extra_address_populate_form_commerce_checkout_pane_settings_form_alter(&$form, &$form_state) {
-  $pane_id = $form['checkout_pane']['#value']['pane_id'];
+  if ($form['checkout_pane']['#value']['base'] == 'commerce_customer_profile_pane') {
 
-  if (substr($pane_id, 0, 16) == 'customer_profile') {
     // Load user entity and look for address fields
     $fields = field_info_instances('user');
     $address_fields = array();
@@ -26,6 +25,7 @@ function commerce_extra_address_populate_form_commerce_checkout_pane_settings_fo
     }
 
     // Find out current value if set
+    $pane_id = $form['checkout_pane']['#value']['pane_id'];
     $setting = variable_get('commerce_extra_address_populate_settings', array());
     $default_value = isset($setting[$pane_id]) ? $setting[$pane_id] : '';
 
@@ -53,9 +53,7 @@ function commerce_extra_address_populate_form_commerce_checkout_pane_settings_fo
  *
  */
 function commerce_extra_address_populate_field_attach_form($entity_type, $entity, &$form, &$form_state, $langcode) {
-  if (!isset($entity->is_new)) {
-    return;
-  }
+
   // Ensure, we're attaching field into right entity type
   if ($entity_type == 'commerce_customer_profile') {
 
@@ -64,12 +62,7 @@ function commerce_extra_address_populate_field_attach_form($entity_type, $entity
 
       // Get user address field which contains default values
       $settings = variable_get('commerce_extra_address_populate_settings', array());
-      $user_address_field = '';
-      if (isset($form['#parents'][0])) {
-        if (isset($settings[$form['#parents'][0]])) {
-          $user_address_field = $settings[$form['#parents'][0]];
-        }
-      }
+      $user_address_field = isset($settings[$form['#parents'][0]]) ? $settings[$form['#parents'][0]] : '';
       if (!empty($user_address_field)) {
         global $user;
         $user_fields = user_load($user->uid);
