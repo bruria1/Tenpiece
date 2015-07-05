@@ -83,6 +83,7 @@ $("#open-menu").addClass("hide");
 $(document).ready(function(){
     $(".menu-2084 a").hover(function(){
         $("#open-menu").addClass("display").removeClass("hide");
+        $(".user-menu-icon").addClass("hide").removeClass("display");
         },function(){
         $("#open-menu").addClass("hide").removeClass("display");
     });

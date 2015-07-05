@@ -339,7 +339,7 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
       }
     }
     .commerce-price-savings-formatter-prices-down{
-      margin-top: 0px;
+      margin-top: 4px;
       .commerce-price-savings-formatter-list{
         color: #c0c0c0;
         font-size: 1.1em;
@@ -521,19 +521,76 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
 
 
 #open-menu{
-  @include width;
   position: absolute;
-  margin-top: 49px;
-  background-color: #fff;
+  margin: 65px 3%;
+  background-color: #f2f2f2;
   z-index: 200;
-  width: 100%;
+  max-width: 100%;
+  position: absolute;
+  width: 94%;
+  border: 1px solid #c4c4c4;
+  border-radius: 0 0 3px 3px;
+  padding: 0 3%;
+  right: 0%;
+  box-sizing:border-box;
   .item-list{
     float: right;
-    width: 20%;
+    width: 18.4%;
+    margin-left: 2%;
   }
   h3{
     margin-top: 0;
   }
+  &:after, &:before {
+      border-left: 13px solid transparent;
+      border-right: 13px solid transparent;
+      border-bottom: 13px solid #f2f2f2;
+      top: -13px;
+      content: '';
+      right: 215px;
+      position: absolute;
+  }
+  &:before {
+    border-bottom: 13px solid;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    top: -13px;
+  }
+  .view-footer{
+    float: left;
+    width: 18.4%;
+  }
+  a{
+    color: $default;
+    border-bottom: 1px solid #c4c4c4;
+    display: block;
+    padding: 15px 0;
+  }
+  .views-row-last a{
+    border: none;
+  }
+  .views-row-first a{
+    padding-top: 0;
+  }
+  li{
+    list-style-type: none;
+    margin: 0;
+  }
+  ul{
+    padding: 0;
+    margin: 0;
+  }
+  h3{
+    margin-bottom: 0;
+    a{
+      border:none;
+    }
+  }
+}
+
+.open-menu-wrapper{
+  @include width;
+  position: relative;
 }
 
 #open-menu.hide{
@@ -551,14 +608,22 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
     background-color: #f2f2f2;
     border: 1px solid #c4c4c4;
     border-radius: 0 0 3px 3px;
-    left: -25px;
+    left: 0px;
     position: absolute;
     top: 57px;
     z-index: 300;
     .views-field{
       border-bottom: 1px solid #c4c4c4;
-      padding: 5px 25px;
-      text-align: center;
+      padding: 5px 16px;
+      a{
+        color: $default;
+      }
+      &:hover{
+        background-color: #fff;
+      }
+    }
+    .views-field-name:hover{
+      background-color: #f2f2f2;
     }
     .views-field-nothing-1{
       border-bottom: none;
@@ -570,6 +635,8 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
       display: inline-block;
       margin-right: 10px;
       width: 23px;
+      float: left;
+      text-align: center;
     }
   }
   .menu:after, .menu:before {
@@ -578,7 +645,7 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
       border-bottom: 13px solid #f2f2f2;
       top: -13px;
       content: '';
-      left: 42%;
+      left: 33%;
       position: absolute;
   }
   .menu:before {
