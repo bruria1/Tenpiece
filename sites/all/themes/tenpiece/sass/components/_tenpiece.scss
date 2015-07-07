@@ -394,7 +394,7 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
     .views-field-nid{
       opacity: 1;
     }
-    .views-field-title{
+    .views-field-title, .views-field-title-1{
       .image, .title, .design, .price{
         opacity: 0;
       }
@@ -402,6 +402,24 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
   }
 }
 
+/************  store  *****************/
+
+.view-products.view-display-id-entity_view_1{
+  float: left;
+  width: 75%;
+  margin-top: 0;
+}
+.view-amir-inner-term-eva.view-display-id-entity_view_1{
+    float: right;
+    width: 25%;
+  }
+
+.vocabulary-product{
+  h2{
+    width: 25%;
+    float: right;
+  }
+}
 /************** footer *****************/
 
 .wrapper-bottom{
