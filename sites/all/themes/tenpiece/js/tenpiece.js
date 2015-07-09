@@ -49,6 +49,26 @@ if ($("body").hasClass("node-type-product")) {
     });
 };
 
+/*******  store page   *******/
+
+if ($("body").hasClass("page-node-50")) {
+   $i = 1;
+   $("#block-views-amir-inner-term-eva-block .view-amir-inner-term-eva.view-display-id-block > .view-content > .views-row").each(function(){
+     $class = "place"+$i++;
+     $(this).addClass($class); 
+     if ($i>3) { $i=1;}
+    });
+};
+
+if ($("body").hasClass("page-taxonomy-term")) {
+   $i = 1;
+   $("#block-views-amir-inner-term-eva-block-2 .view-amir-inner-term-eva.view-display-id-block_2 > .view-content > .views-row").each(function(){
+     $class = "place"+$i++;
+     $(this).addClass($class); 
+     if ($i>3) { $i=1;}
+    });
+};
+
 /********  hide control if only one image  **********/
 
 $image_number=$('.field-slideshow > div').length;

@@ -73,7 +73,8 @@ textarea:focus, input:focus{
 }
 
 body{
-font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
+  font-family: 'Open Sans Hebrew', sans-serif;  
+  font-size: 16px;
   color: $default;
 }
 
@@ -117,6 +118,10 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
 
 #main{
   padding-top: 30px;
+}
+
+#content{
+  padding: 0;
 }
 /************  front *************/
 
@@ -394,7 +399,7 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
     .views-field-nid{
       opacity: 1;
     }
-    .views-field-title{
+    .views-field-title, .views-field-title-1{
       .image, .title, .design, .price{
         opacity: 0;
       }
@@ -402,6 +407,99 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
   }
 }
 
+/************  store  *****************/
+
+.view-products.view-display-id-entity_view_1, .view-products.view-display-id-entity_view_2{
+  float: left;
+  width: 75%;
+  margin-top: 0;
+}
+
+.view-amir-inner-term-eva.view-display-id-entity_view_1, .view-amir-inner-term-eva.view-display-id-entity_view_2{
+    float: right;
+    width: 25%;
+    clear: right;
+}
+
+.vocabulary-product{
+  h2{
+    width: 25%;
+    float: right;
+    clear: both;
+    margin-top: 30px;
+    margin-bottom: 24px;
+    font-size: 2em;
+    line-height: 1em;
+  }
+}
+
+.place1 .vocabulary-product h2 a{
+    color: $light-green;
+}
+.place2 .vocabulary-product h2 a{
+    color: $light-yellow;
+}
+.place3 .vocabulary-product h2 a{
+    color: $purple;
+}
+
+.page-node-50, .page-taxonomy-term{
+  .view-products.view-display-id-entity_view_2{
+    .views-row{
+      width: 30.6%;
+    }
+    .views-row-last{
+      margin-left: 0;
+    }
+  }
+  .place1{
+    .view-products{
+      .field-name-commerce-price .commerce-price-savings-formatter-price td{
+        color: $green;
+      }
+    }
+    .view-amir-inner-term-eva.view-display-id-entity_view_1 a:hover{
+      color: $green;
+    }
+  }
+  .place2{
+    .view-products{
+      .views-field-nid .link a{
+        background-color: $light-yellow;
+      }
+      .field-name-commerce-price .commerce-price-savings-formatter-price td{
+        color: $light-yellow;
+      }
+    }
+    .view-amir-inner-term-eva.view-display-id-entity_view_1 a:hover{
+      color: $light-yellow;
+    }
+  }
+  .place3{
+    .view-products{
+      .views-field-nid .link a{
+        background-color: $purple;
+      }
+    }
+    .view-amir-inner-term-eva.view-display-id-entity_view_1 a:hover{
+      color: $purple;
+    }
+  }
+  .view-amir-inner-term-eva.view-display-id-entity_view_1{
+    a{
+      font-size: 1.5em;
+      color: $default;
+      padding-bottom: 10px;
+      display: block;
+    }
+  }
+}
+
+.page-node-50{
+  #page-title{
+    display: none;
+  }
+}
 /************** footer *****************/
 
 .wrapper-bottom{
@@ -984,7 +1082,7 @@ font-family: 'Open Sans Hebrew', sans-serif;  font-size: 16px;
     }
     input.form-button-disabled{
       float: right!important;
-      left: auto!important;
+      left: 0!important;
       clear: right;
       &:hover{
         background-image:none!important;
