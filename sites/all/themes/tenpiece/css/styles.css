@@ -2227,11 +2227,11 @@ body {
 }
 
 /* line 448, ../sass/components/_tenpiece.scss */
-.page-node-50 .view-products.view-display-id-entity_view_2 .view-products.view-display-id-entity_view_1 .views-row, .page-taxonomy-term .view-products.view-display-id-entity_view_2 .view-products.view-display-id-entity_view_1 .views-row {
+.page-node-50 .view-products.view-display-id-entity_view_2 .views-row, .page-node-50 .view-products.view-display-id-entity_view_1 .views-row, .page-taxonomy-term .view-products.view-display-id-entity_view_2 .views-row, .page-taxonomy-term .view-products.view-display-id-entity_view_1 .views-row {
   width: 30.6%;
 }
 /* line 451, ../sass/components/_tenpiece.scss */
-.page-node-50 .view-products.view-display-id-entity_view_2 .view-products.view-display-id-entity_view_1 .views-row-last, .page-taxonomy-term .view-products.view-display-id-entity_view_2 .view-products.view-display-id-entity_view_1 .views-row-last {
+.page-node-50 .view-products.view-display-id-entity_view_2 .views-row-last, .page-node-50 .view-products.view-display-id-entity_view_1 .views-row-last, .page-taxonomy-term .view-products.view-display-id-entity_view_2 .views-row-last, .page-taxonomy-term .view-products.view-display-id-entity_view_1 .views-row-last {
   margin-left: 0;
 }
 /* line 457, ../sass/components/_tenpiece.scss */
