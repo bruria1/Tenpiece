@@ -104,18 +104,6 @@ body{
   position: relative;
 }
 
-.breadcrumb{
-  background-color: #f2f2f2;
-  ol{
-    @include width;
-    color: #333;
-    padding: 15px 3%;
-    a{
-      color: #333;
-    }
-  }
-}
-
 #main{
   padding-top: 30px;
 }
@@ -123,6 +111,40 @@ body{
 #content{
   padding: 0;
 }
+
+header{
+  @include width;
+  margin-top: 20px;
+}
+
+/************ breadcrumbs  ***********/
+
+.gray-area-wrapper{
+  background-color: #f2f2f2;
+  margin-top: 47px;
+  overflow: hidden;
+  .gray-area{
+    @include width;
+  }
+  .region-filter{
+    float: left;
+      padding: 15px 0;
+      .form-type-select.form-item-jump{
+        margin: 0;
+      }
+  }
+  .breadcrumb{
+    float: right;
+      padding: 15px 0;
+      ol{
+        color: #333;
+       a{
+        color: #333;
+        }
+      }
+  }
+}
+
 /************  front *************/
 
 .front{
@@ -620,7 +642,7 @@ body{
 
 #open-menu{
   position: absolute;
-  margin: 65px 3%;
+  margin: 45px 0;
   background-color: #f2f2f2;
   z-index: 200;
   max-width: 100%;

@@ -87,6 +87,7 @@ scripts[] = js/tenpiece.js
 
 regions[cart]         = Cart
 regions[header]         = Header
+regions[filter]         = Filter
 regions[navigation]     = Navigation bar
 regions[highlighted]    = Highlighted
 regions[help]           = Help

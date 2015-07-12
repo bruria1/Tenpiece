@@ -131,6 +131,3 @@ function tenpiece_preprocess_block(&$variables, $hook) {
 }
 // */
 
-
-
-
