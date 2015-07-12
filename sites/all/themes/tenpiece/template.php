@@ -131,3 +131,16 @@ function tenpiece_preprocess_block(&$variables, $hook) {
 }
 // */
 
+ function tenpiece_form_views_exposed_form_alter(&$form, &$form_state) {
+
+     //Got the Form Id by using inspect element/Firebug
+     if($form["#id"] == 'views-exposed-form-products-page-1'){
+
+         //field_city_tid is the Filter Identifier Key
+         $form['field_material_tid']['#options']["All"] = t('Material');
+         $form['field_surface_tid']['#options']["All"] = t('Surface');
+
+     }
+
+
+  }
