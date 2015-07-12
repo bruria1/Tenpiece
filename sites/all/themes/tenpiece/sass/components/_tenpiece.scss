@@ -99,13 +99,9 @@ body{
   font-size: 2.5em;
   font-weight: normal;
 }
-#header{
-  padding: 0;
-  position: relative;
-}
 
 #main{
-  padding-top: 30px;
+  padding-top: 0px;
 }
 
 #content{
@@ -115,9 +111,11 @@ body{
 header{
   @include width;
   margin-top: 20px;
+  position: relative;
+  padding: 0 3%!important;
 }
 
-/************ breadcrumbs  ***********/
+/************ breadcrumbs & filter  ***********/
 
 .gray-area-wrapper{
   background-color: #f2f2f2;
@@ -127,10 +125,23 @@ header{
     @include width;
   }
   .region-filter{
-    float: left;
+      float: left;
       padding: 15px 0;
       .form-type-select.form-item-jump{
         margin: 0;
+      }
+      #block-views-exp-products-page-1, #block-views-term-store-block-1{
+        float: left;
+        .views-exposed-widget{
+          padding: 0;
+        }
+        select{
+          width: 220px;
+          margin-right: 40px;
+        }
+        .views-exposed-widgets {
+          margin-bottom: 0;
+        }
       }
   }
   .breadcrumb{
@@ -185,6 +196,9 @@ header{
       margin: 0 auto 0;
       width: 52px;
     }
+  }
+  .view-products{
+    margin-top: 100px;
   }
 }
 
@@ -305,14 +319,14 @@ header{
 /************** products *****************/
 
 .view-products{
-  margin-top: 100px;
+  margin-top: 20px;
   .views-row{
     background-color:#f3f3f3;
     box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.25);
     width: 22%;
     margin-left: 4%;
     float: right;
-    margin-bottom: 50px;
+    margin-top: 50px;
     border:1px solid #e0e0e0;
     padding: 10px;
     text-align: center;
@@ -435,20 +449,47 @@ header{
   float: left;
   width: 75%;
   margin-top: 0;
+  overflow: hidden;
+  position: inherit;
+  .view-footer{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 19%;
+    text-align: center;
+    p{
+      margin: 0;
+    }
+    a{
+      color: #fff!important;
+      text-align: center;
+      padding-bottom: 0;
+      font-size: 1.5em;
+      background-position: center -100%;
+      position: absolute;
+      width: 100%;
+      right: 0;
+      bottom: 0;
+      &:hover{
+        background: url("../images/all-product.png") no-repeat center center;
+        color:  transparent!important;
+      }
+    }
+  }
 }
 
 .view-amir-inner-term-eva.view-display-id-entity_view_1, .view-amir-inner-term-eva.view-display-id-entity_view_2{
     float: right;
-    width: 25%;
+    width: 22%;
     clear: right;
-}
+  }
 
 .vocabulary-product{
   h2{
     width: 25%;
     float: right;
     clear: both;
-    margin-top: 30px;
+    margin-top: 70px;
     margin-bottom: 24px;
     font-size: 2em;
     line-height: 1em;
@@ -466,6 +507,10 @@ header{
 }
 
 .page-node-50, .page-taxonomy-term{
+  .place1, .place2, .place3{
+    overflow: hidden;
+    position: relative;
+  }
   .view-products.view-display-id-entity_view_2, .view-products.view-display-id-entity_view_1{
     .views-row{
       width: 30.6%;
@@ -480,8 +525,15 @@ header{
         color: $green;
       }
     }
-    .view-amir-inner-term-eva.view-display-id-entity_view_1 a:hover{
-      color: $green;
+    .view-amir-inner-term-eva.view-display-id-entity_view_1{
+      a:hover{
+        color: $green;
+      }
+    }
+    .view-products.view-display-id-entity_view_1, .view-products.view-display-id-entity_view_2{
+      .view-footer a{
+          @include button($light-green, $green, $light-green-h, $green-h);
+      }
     }
   }
   .place2{
@@ -490,11 +542,18 @@ header{
         background-color: $light-yellow;
       }
       .field-name-commerce-price .commerce-price-savings-formatter-price td{
+          color: $light-yellow;
+      }
+    }
+    .view-amir-inner-term-eva.view-display-id-entity_view_1{
+      a:hover{
         color: $light-yellow;
       }
     }
-    .view-amir-inner-term-eva.view-display-id-entity_view_1 a:hover{
-      color: $light-yellow;
+    .view-products.view-display-id-entity_view_1, .view-products.view-display-id-entity_view_2{
+      .view-footer a{
+        @include button($light-yellow, $yellow, $light-yellow-h, $yellow-h); 
+      }
     }
   }
   .place3{
@@ -515,6 +574,11 @@ header{
       display: block;
     }
   }
+  .view-products.view-display-id-entity_view_1, .view-products.view-display-id-entity_view_2{
+      .view-footer a{
+      @include button($light-purple, $purple, $light-purple-h, $purple-h); 
+      }
+    }
 }
 
 .page-node-50{
@@ -651,7 +715,6 @@ header{
   border: 1px solid #c4c4c4;
   border-radius: 0 0 3px 3px;
   padding: 0 3%;
-  right: 0%;
   box-sizing:border-box;
   .item-list{
     float: right;
@@ -1386,3 +1449,46 @@ header{
     display: none;
   }
 }
+
+/************  design select  ************/
+
+#block-views-term-store-block-1, #block-views-exp-products-page-1{
+  .form-type-select {
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    height: 40px;
+    line-height: 31px;
+    background: url("../images/select.png") no-repeat 13px center;
+    text-align:-moz-center;
+    text-align:-webkit-center;
+    margin-bottom: 5px;
+  }
+  .form-type-select select {
+    width: 107%;
+    padding: 0px 11px 0 0;
+    cursor: pointer;
+    text-indent: 0.01px;
+    text-overflow: “”;
+    font-size: 17px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    max-width: 150%;
+    height: 40px;
+    color: $default;
+    border: 1px solid #cbcbcb;
+    border-radius: 4px;
+  }
+  .form-type-select select::-ms-expand {
+    display: none;
+  }
+  option{
+    padding: 5px 11px;
+  }
+}
+
+#edit-field-material-tid-wrapper, #edit-field-surface-tid-wrapper{
+  display: none;
+}
+

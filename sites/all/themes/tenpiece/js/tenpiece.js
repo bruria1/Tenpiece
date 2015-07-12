@@ -69,6 +69,15 @@ if ($("body").hasClass("page-taxonomy-term")) {
     });
 };
 
+if ($("body").hasClass("page-taxonomy-term")) {
+  if ($(".view-products.view-display-id-page_1 .view-header div").hasClass("tid15")){
+    $("#edit-field-material-tid-wrapper").css({ display: "block" });
+  }
+  if ($(".view-products.view-display-id-page_1 .view-header div").hasClass("tid7")){
+    $("#edit-field-surface-tid-wrapper").css({ display: "block" });
+  }
+}
+
 /********  hide control if only one image  **********/
 
 $image_number=$('.field-slideshow > div').length;
