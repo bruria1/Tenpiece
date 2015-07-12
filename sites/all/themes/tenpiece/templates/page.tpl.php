@@ -19,9 +19,6 @@
           ?>
   </div>
 </div>
-
-<div id="page">
-
   <header class="header" id="header" role="banner">
 
     <?php if ($logo): ?>
@@ -112,12 +109,21 @@
 
       
   </header>
+    <div class="gray-area-wrapper">
+      <div class="gray-area">
+        <?php print $breadcrumb; ?>
+        <?php print render($page['filter']); ?>
+       </div>
+     </div>
+<div id="page">
+
+
 
   <div id="main">
 
     <div id="content" class="column" role="main">
       <?php print render($page['highlighted']); ?>
-      <?php print $breadcrumb; ?>
+
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
