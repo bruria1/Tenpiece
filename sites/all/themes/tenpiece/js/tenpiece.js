@@ -17,6 +17,34 @@
 Drupal.behaviors.my_custom_behavior = {
   attach: function(context, settings) {
 
+/************  menu  **************/
+
+$('.menu-button').on('click', function() {
+  if ($("body").hasClass("menu-open")) {
+    $('body').removeClass("menu-open");
+    $('#navigation').addClass("hide-mobile");
+  } 
+  else {
+    $('body').addClass("menu-open");
+    $('#navigation').removeClass("hide-mobile");
+  }
+});
+
+/************  scroll  **************/
+
+$(document).ready(function(){       
+      $scroll_pos = 0;
+      $(document).scroll(function() { 
+        $scroll_pos = $(this).scrollTop();
+        if($scroll_pos > 0) {
+            $("body").addClass('scroll');
+        }
+        else {
+            $("body").removeClass('scroll');
+        }
+      });
+});
+
 /************  cart  **************/
 
 if ($(".view-shopping-top-manu .button-cart").length != 0){
@@ -70,15 +98,15 @@ if ($("body").hasClass("page-taxonomy-term")) {
 };
 
 if ($("body").hasClass("page-taxonomy-term")) {
-  if ($(".view-products.view-display-id-page_1 .view-header div").hasClass("tid15")){
+  if ($(".view-header div").hasClass("tid15")){
     $("#edit-field-material-tid-wrapper").css({ display: "block" });
   }
-  if ($(".view-products.view-display-id-page_1 .view-header div").hasClass("tid7")){
+  if ($(".view-header div").hasClass("tid7")){
     $("#edit-field-surface-tid-wrapper").css({ display: "block" });
   }
 }
 
-/********  hide control if only one image  **********/
+/********  hide control if only one image (product gallery) **********/
 
 $image_number=$('.field-slideshow > div').length;
 if ($image_number==1){
@@ -105,9 +133,6 @@ $("#main").click(function(){
 $number_tender=$(".number-man-icon .view-header").html();
 $( ".user-menu-icon .menu .views-field-nothing" ).append('<span class="number"></span>');
 $( ".user-menu-icon .menu .views-field-nothing .number" ).append($number_tender);
-
-
-$("#open-menu").addClass("hide");
 
 $(document).ready(function(){
     $(".menu-2084 a").hover(function(){
@@ -154,11 +179,14 @@ if ($("body").hasClass("page-node-add-product") || ($("body").hasClass("page-nod
 
 }
 
+/********  arrow - front  ************/
 if ($("body").hasClass("front")){
-  $('.arrow-bottom').click(function(){
-    $("html, body").animate({ scrollTop: $("#block-views-products-block-1").offset().top -20 }, 2000);
+  $('.arrow-bottom img').click(function(){
+    $("html, body").animate({ scrollTop: $(".region-content-bottom").offset().top -90 }, 2000);
     return false;
   });
+  $height = $(window).height()-120;
+  $(".arrow-bottom").css("top", $height);
 }
 
 

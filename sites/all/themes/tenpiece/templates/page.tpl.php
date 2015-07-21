@@ -12,13 +12,40 @@
 
 
 <div class="open-menu-wrapper">
-  <div id="open-menu">
+  <div id="open-menu" class="hide">
         <?php
             $my_block = module_invoke('views', 'block_view', 'menu_store-block');
             print render($my_block['content']); 
           ?>
   </div>
 </div>
+<div class="menu-button">
+  <span class="line1"></span>
+  <span class="line2"></span>
+  <span class="line3"></span>
+</div>
+    <div id="navigation" class="hide-mobile">
+
+      <?php if ($main_menu): ?>
+        <nav id="main-menu" role="navigation" tabindex="-1">
+          <?php
+          // This code snippet is hard to modify. We recommend turning off the
+          // "Main menu" on your sub-theme's settings form, deleting this PHP
+          // code block, and, instead, using the "Menu block" module.
+          // @see https://drupal.org/project/menu_block
+          print theme('links__system_main_menu', array(
+            'links' => $main_menu,
+            'attributes' => array(
+              'class' => array('links', 'inline', 'clearfix'),
+            ),
+            'heading' => array(
+              'text' => t('Main menu'),
+              'level' => 'h2',
+              'class' => array('element-invisible'),
+            ),
+          )); ?>
+        </nav>
+        </div>
   <header class="header" id="header" role="banner">
 
     <?php if ($logo): ?>
@@ -56,28 +83,6 @@
     <?php endif; ?>
 
     <?php print render($page['header']); ?>
-    <div id="navigation">
-
-      <?php if ($main_menu): ?>
-        <nav id="main-menu" role="navigation" tabindex="-1">
-          <?php
-          // This code snippet is hard to modify. We recommend turning off the
-          // "Main menu" on your sub-theme's settings form, deleting this PHP
-          // code block, and, instead, using the "Menu block" module.
-          // @see https://drupal.org/project/menu_block
-          print theme('links__system_main_menu', array(
-            'links' => $main_menu,
-            'attributes' => array(
-              'class' => array('links', 'inline', 'clearfix'),
-            ),
-            'heading' => array(
-              'text' => t('Main menu'),
-              'level' => 'h2',
-              'class' => array('element-invisible'),
-            ),
-          )); ?>
-        </nav>
-        </div>
       <?php endif; ?>
       <?php print render($page['navigation']); ?>
       <div class="shoping-icon top-icons">
@@ -109,12 +114,15 @@
 
       
   </header>
+  <?php if ($breadcrumb || render($page['filter'])): ?>
+
     <div class="gray-area-wrapper">
       <div class="gray-area">
         <?php print $breadcrumb; ?>
         <?php print render($page['filter']); ?>
        </div>
      </div>
+    <?php endif ?>
 <div id="page">
 
 
