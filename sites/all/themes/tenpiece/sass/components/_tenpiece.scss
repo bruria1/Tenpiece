@@ -76,11 +76,13 @@ body{
   font-family: 'Open Sans Hebrew', sans-serif;  
   font-size: 16px;
   color: $default;
+  @include res(s-m){
+    background-color: #f0f0f0;
+  }
 }
 
 #page{
   @include width;
-  padding-top: 20px;
 }
 
 .button-green{
@@ -110,10 +112,36 @@ body{
 
 header{
   @include width;
-  margin-top: 20px;
   position: relative;
-  padding: 0 3%!important;
+  padding: 20px 3% 15px!important;
+  z-index: 200;
 }
+
+#logo img{
+  @include res(s-m){
+    height: 40px;
+    margin-right: 50px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+  }
+}
+
+/************ scroll - header mobile  ***********/
+
+.scroll{ 
+  #logo img{
+    opacity: 1!important;
+  }
+  #header{
+    background-color: rgba(256, 256, 256, 0.9);
+    position: fixed;
+    top: 0;
+  }
+  .menu-button{
+    position: fixed;
+  }
+}
+
 
 /************ breadcrumbs & filter  ***********/
 
@@ -159,6 +187,17 @@ header{
 /************  front *************/
 
 .front{
+  .logo-mobile{
+    display: none;
+    @include res(s-m){
+      display: block;
+    }
+  }
+  #logo img{
+    @include res(s-m){
+      opacity: 0;
+    }
+  }
   #page-title{
     display: none;
   }
@@ -168,46 +207,100 @@ header{
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+    .purple{
+      @include res(s-m){
+          color: $purple;
+      }
+      &.hide{
+        display: none;
+        @include res(s-m){
+          display: inline;
+        }
+      }
+    }
+    @include res(s-m){
+      background: none;
+    }
     .title1{
       font-size: 3em;
       font-weight: bold;
       letter-spacing: -3px;
       line-height: 90px;
       padding-top: 36px;
+      @include res(s-m){
+        padding-top: 0;
+      }
+      @include res(s){
+        font-size: 2.4em;
+      }
     }
     .title2{
       font-weight: bold;
       font-size: 2.1em;
       margin-bottom: 250px;
+      @include res(m){
+        font-size: 1.9em;
+        margin-bottom: 0;
+      }
+      @include res(s){
+        font-size: 1.5em;
+        line-height: 1.2em;
+        margin-bottom: 0;
+      }
     }
     .button-green, .button-yellow{
       float: right;
       margin-right: 3px;
       font-size: 2.2em;
       padding: 20px 40px;
+      @include res(s-m){
+        display: none;
+      }
     }
     .button-yellow{
       float: left;
       margin-left: 3px;
     }
-    .arrow-bottom{
-      padding-top: 155px;
-      cursor: pointer;
-      margin: 0 auto 0;
-      width: 52px;
-    }
   }
+  .arrow-bottom{
+      width: 100%;
+      padding-top: 155px;
+      @include res(s-m){
+        display: none;
+      }
+      img{
+        width: 52px;
+        cursor: pointer;
+        margin: 0 auto;
+        display: block;
+      }
+    }
   .view-products{
     margin-top: 100px;
   }
 }
 
-.logged-in.front .field-name-body .button-yellow{
+@media (max-height: 710px){
+    .arrow-bottom{
+      padding-top: 0!important;
+      position: absolute;
+    }
+}
+
+
+.logged-in.front .field-name-body .button-yellow.not-logged{
+  display: none;
+}
+
+.not-logged-in.front .field-name-body .button-yellow.logged-in{
   display: none;
 }
 
 #block-views-products-block-1{
   margin-top: 100px;
+  @include res(s-m){
+    display: none;
+  }
   .views-row{
     background-color:#f3f3f3;
     box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.25);
@@ -300,6 +393,11 @@ header{
       font-size: 1.4em;
       color: $purple;
       padding-top: 27px;
+      @include res(s-m){
+        font-size: 2em;
+        font-weight: bold;
+        margin-bottom: 0;
+      }
     }
   }
   .views-field-body{
@@ -309,10 +407,22 @@ header{
     line-height: 1.2em;
     max-width: 885px;
     margin: 0 auto;
+    @include res(s-m){
+        font-size: 1.8em;
+        p{
+          margin: 0;
+        }
+    }
   }
   .views-field-nothing{
     text-align: center;
     margin-top: 10px;
+    @include res(s-m){
+      margin-top: 32px;
+      a{
+        font-size: 1.8em;
+      }
+    }
   }
 }
 
@@ -358,8 +468,8 @@ header{
     }
   }
   .image, .title, .design, .price{
-    transition: all 1s;
-    -webkit-transition: all 1s;
+    transition: all .5s;
+    -webkit-transition: all .5s;
   }
   .title, .design{
     font-size: 1.5em;
@@ -403,8 +513,8 @@ header{
     top: 0;
     width: 100%;
     padding: 30px 10px 10px 10px;
-    transition: all 1s;
-    -webkit-transition: all 1s;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
     box-sizing: border-box;
     right: 0;
     .description{
@@ -613,7 +723,7 @@ header{
       @include res(s-m){
         width: 100%;
         text-align: center;
-        margin: 20px 0 20px;
+        margin: 0;
       }
       img{
         margin: 0 0 -4px 13px;
@@ -633,6 +743,11 @@ header{
     @include width;
     color: #fff;
     padding: 0px 3%  20px!important;
+    #block-views-text-site-block-2{
+      @include res(s-m){
+        display: none;
+      }
+    }
     #block-views-text-site-block-2, #block-webform-client-block-85{
       padding-left: 5%;
     }
@@ -651,6 +766,9 @@ header{
         padding: 6px 10px;
         border-radius: 4px;
         border: none;
+        @include res(s-m){
+          width: 100%;
+        }
       }
       input.form-submit{
         @include button($light-green, $green, $light-green-h, $green-h);
@@ -666,6 +784,10 @@ header{
     .block{
       float: right;
       width: 30%;
+      @include res(s-m){
+        width: 100%;
+        text-align: center;
+      }
       h2{
         font-weight: normal;
         margin: 0;
@@ -682,11 +804,18 @@ header{
 /************  main menu *************/
 
 #navigation{
-  position: relative;
   height: auto;
   float: right;
   padding-top: 10px;
   width: auto;
+  width: 100%;
+  #main-menu{
+    @include width;
+    ul{
+      padding: 20px 200px 0 0;
+      display: block;
+    }
+  }
   a{
     font-size: 1.1em;
     color: $default;
@@ -698,17 +827,107 @@ header{
     border-left: 1px solid;
     margin-left: 16px;
     padding-left: 32px!important;
+    @include res(s-m){
+      border:none;
+      margin: 0;
+      padding: 0;
+    }
   }
 }
 
+/**************  responsive menu  *************/
+
+.menu-button{
+  display: none;
+  background-color: #454545;
+  border:1px solid #454545;
+  height: 40px;
+  border-radius: 50%;
+  width: 40px;
+  position: absolute;
+  right: 15px;
+  z-index: 401;
+  cursor: pointer;
+  top: 20px;
+  @include res(s-m){
+    display: block;
+  }
+  span{
+    background-color: #fff;
+    display: block;
+    height: 1px;
+    margin: 5px auto 0;
+    width: 53%;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+  }
+  .line1{
+    margin-top: 14px;
+  }
+}
+
+#navigation.hide-mobile{
+  @include res(s-m){
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+.menu-open{
+  .menu-button{
+    background-color: transparent;
+    .line1{
+      transform: rotate(45deg);
+      -ms-transform: rotate(45deg); 
+      -webkit-transform: rotate(45deg); 
+      margin-top: 20px;
+    }
+    .line2{
+      display: none;
+    }
+    .line3{
+      margin-top: -1px;
+      transform: rotate(135deg);
+      -ms-transform: rotate(135deg); 
+      -webkit-transform: rotate(135deg); 
+    }
+    span{
+      background-color: #454545;
+    }
+  }
+ #navigation{
+  transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
+  opacity: 1;
+  z-index: 400;
+  background-color: #fff;
+  padding: 73px 0 0 0;
+  width: 80%;
+  #main-menu{
+    padding: 0;
+    ul{
+      padding: 0;
+      li{
+        width: 100%;
+        border-top: 1px solid #f0f0f1;
+        padding: 17px 20px!important;
+        box-sizing: border-box;
+        &:hover, &.active{
+          background-color: #f8f8f8;
+        }
+      }
+    }
+  }
+ } 
+}
 /************  menu store  *************/
 
 
 #open-menu{
   position: absolute;
-  margin: 45px 0;
+  margin: 63px 0;
   background-color: #f2f2f2;
-  z-index: 200;
+  z-index: 300;
   max-width: 100%;
   position: absolute;
   width: 94%;
@@ -854,6 +1073,10 @@ header{
 .shoping-icon{
   background-position: 0 0;
   position: relative;
+  @include res(s-m){
+    position: absolute;
+    left: 15px;
+  }
   .view-content{
     display: none;
   }
@@ -879,6 +1102,8 @@ header{
   background-position: -50px 0;
   position: relative;
 }
+
+
 
 /**************** edit product *********/
 
