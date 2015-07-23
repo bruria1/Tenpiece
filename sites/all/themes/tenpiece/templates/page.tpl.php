@@ -145,7 +145,6 @@
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
       <?php print render($page['content']); ?>
-      <?php print render($page['content_bottom']); ?>
       <?php print $feed_icons; ?>
     </div>
 
@@ -165,6 +164,9 @@
     <?php endif; ?>
 
   </div>
+<div class="wrapper-content-bottom">
+  <?php print render($page['content_bottom']); ?>
+</div>
 
 <div class="wrapper-footer">
   <?php print render($page['footer']); ?>

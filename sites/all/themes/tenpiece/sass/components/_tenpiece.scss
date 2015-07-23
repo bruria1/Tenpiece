@@ -126,6 +126,9 @@ header{
   }
 }
 
+.region-content-bottom{
+  @include width;
+}
 /************ scroll - header mobile  ***********/
 
 .scroll{ 
@@ -428,8 +431,45 @@ header{
 
 //  mobile
 
+<<<<<<< HEAD
 #block-views-product-mobile-block{
   direction: ltr!important;
+=======
+#block-views-mobil-product-block, #block-views-category-mobile-block{
+  display: none;
+  @include res(s-m){
+    display: block;
+  }
+}
+
+#block-views-mobil-product-block{
+  background-color: #fcfcfc;
+  padding: 15px 0 30px;
+  img{
+    padding: 0 4%;
+    box-sizing:border-box;
+  }
+  h2{
+    text-align: center;
+    font-size: 2em;
+    line-height: 1.4em;
+    @include width;
+  }
+  .view{
+    @include width;
+  }
+  .view-content{
+    border-top: 1px solid;
+    padding-top: 30px;
+  }
+}
+
+.front .region-content-bottom{
+  @include res(s-m){
+    width: 100%;
+    padding: 0;
+  }
+>>>>>>> e7028931de020033db462b3c2e7d08da82918d41
 }
 /************** products *****************/
 
@@ -755,9 +795,11 @@ header{
     }
     #block-views-text-site-block-2, #block-webform-client-block-85{
       padding-left: 5%;
+      @include res(s-m){
+        padding: 0;
+      }
     }
     #block-webform-client-block-85{
-      padding-left: 5%;
       .form-item{
         margin-top: 0;
         margin-bottom: 10px;
