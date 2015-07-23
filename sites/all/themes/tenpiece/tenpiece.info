@@ -67,7 +67,8 @@ stylesheets[all][] = css/styles.css
 ; Optionally add some JavaScripts to your theme.
 
 scripts[] = js/tenpiece.js
-
+scripts[] = js/owl-carousel/owl.carousel.min.js
+stylesheets[all][] = js/owl-carousel/assets/owl.carousel.css
 
 
 ; This section lists the regions defined in Zen's default page.tpl.php and

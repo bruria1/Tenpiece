@@ -17,9 +17,6 @@
 Drupal.behaviors.my_custom_behavior = {
   attach: function(context, settings) {
 
-$('.owl-carousel').owlCarousel({
-    rtl:true
-})
 /************  menu  **************/
 
 $('.menu-button').on('click', function() {
