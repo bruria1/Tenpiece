@@ -431,10 +431,6 @@ header{
 
 //  mobile
 
-<<<<<<< HEAD
-#block-views-product-mobile-block{
-  direction: ltr!important;
-=======
 #block-views-mobil-product-block, #block-views-category-mobile-block{
   display: none;
   @include res(s-m){
@@ -469,7 +465,6 @@ header{
     width: 100%;
     padding: 0;
   }
->>>>>>> e7028931de020033db462b3c2e7d08da82918d41
 }
 /************** products *****************/
 
