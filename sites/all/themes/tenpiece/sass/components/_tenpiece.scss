@@ -848,16 +848,13 @@ header{
 /************  main menu *************/
 
 #navigation{
-  height: auto;
-  float: right;
-  padding-top: 10px;
-  width: auto;
-  width: 100%;
-  z-index: 400;
+    height: auto;
+    position: relative;
+    width: auto;
   #main-menu{
-    @include width;
+    float: right;
     ul{
-      padding: 20px 200px 0 0;
+      padding: 10px 0px 0 0;
       display: block;
     }
   }
@@ -880,6 +877,18 @@ header{
   }
 }
 
+.menu-3167{
+  display: none;
+}
+
+.logged-in{
+  .menu-3167{
+    display: block;
+  }
+  .menu-2591{
+    display: none;
+  }
+}
 /**************  responsive menu  *************/
 
 .menu-button{
@@ -970,7 +979,7 @@ header{
 
 #open-menu{
   position: absolute;
-  margin: 63px 0;
+  margin: 65px 0;
   background-color: #f2f2f2;
   z-index: 300;
   max-width: 100%;
@@ -994,7 +1003,7 @@ header{
       border-bottom: 13px solid #f2f2f2;
       top: -13px;
       content: '';
-      right: 215px;
+      right: 206px;
       position: absolute;
   }
   &:before {
@@ -1057,8 +1066,9 @@ header{
     border-radius: 0 0 3px 3px;
     left: 0px;
     position: absolute;
-    top: 57px;
+    top: 77px;
     z-index: 300;
+    left: 3%;
     .views-field{
       border-bottom: 1px solid #c4c4c4;
       padding: 5px 16px;
@@ -1169,21 +1179,25 @@ header{
 #block-commerce-cart-cart{
   transition: all 1s;
   -webkit-transition: all 1s;
-  margin-left: -400px;
+  margin-left: -420px;
   position: fixed;
+  top: 0;
   height: 100%;
-  z-index: 350;
-  width: 400px;
+  z-index: 450;
+  width: 420px;
   margin-right: 5px;
   padding: 10px;
+  left: 0;
+  background-color: #f0f0f0;
+  border-right: 1px solid #cbcbcb;
   box-sizing:border-box;
   &.open{
     margin: 0;
   }
   .view-header{
     position: relative;
-    float: right;
-    top: -71px;
+    float: left;
+    top: -50px;
     .close-button{
       border: 1px solid;
       border-radius: 50%;
@@ -1196,8 +1210,9 @@ header{
     }
   }
   h2{
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #b2b3b2;
     font-weight: normal;
+    padding-bottom: 10px;
   }
     ul.links{
     width: 100%;
@@ -1235,43 +1250,63 @@ header{
       }
     }
   }
-}
-
-
-#block-commerce-cart-cart{
-  left: 0;
-  background-color: red;
   table{
-    width:93%;
-    margin: 30px auto;
+    margin: 0 auto;
     display: block;
     tbody{
       width: 100%;
       display: block;
+      margin-bottom: 10px;
     }
     tr.even, tr.odd{
       background-color: transparent;
       display: block;
+      padding: 0.1em 0;
     }
     td{
       margin-left: 10px;
-      display: inline-block;
       padding-top: 15px;
       padding-bottom: 10px;
-    }
-    .views-field-quantity{
-      margin-left: 0;
     }
     .views-field-field-product-defult-image{
       padding: 5px 0;
     }
     .views-field-line-item-title{
-      width: 160px;
+      width: 190px;
       line-height: 1em;
       padding-top: 20px;
     }
     .views-field-commerce-total{
       margin-left: 0;
+      font-size: 1.2em;
+      padding: 34px 0;
+    }
+    .views-field-line-item-title{
+      .title{
+        float: right;
+        margin-left: 5px;
+      }
+    }
+    .views-field-field-imgs{
+      img{
+        border:3px solid #fff;
+      }
+    }
+    .views-field-quantity{
+      padding: 34px 10px!important;
+      font-size: 1.2em;
+    }
+  }
+  .line-item-total{
+    padding-bottom: 10px;
+  }
+  .links{
+    margin-top: 10px;
+    a{
+      @include button($light-purple, $purple, $light-purple-h, $purple-h);
+    }
+    .line-item-summary-view-cart{
+      float: right!important;
     }
   }
 }

@@ -61,11 +61,10 @@ $('#block-commerce-cart-cart .close-button').on('click', function() {
       $('body').removeClass("cart-open");
 });
 
-$('#main').on('click', function() {
+$('#page').on('click', function() {
       $('#block-commerce-cart-cart').removeClass("open");
       $('body').removeClass("cart-open");
 });
-
 /*******  product   *******/
 
 if ($("body").hasClass("node-type-product")) {
