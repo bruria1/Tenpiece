@@ -135,10 +135,12 @@ header{
   #logo img{
     opacity: 1!important;
   }
-  #header{
+  .header-wrapper{
     background-color: rgba(256, 256, 256, 0.9);
     position: fixed;
     top: 0;
+    width: 100%;
+    z-index: 400;
   }
   .menu-button{
     position: fixed;
@@ -851,6 +853,7 @@ header{
   padding-top: 10px;
   width: auto;
   width: 100%;
+  z-index: 400;
   #main-menu{
     @include width;
     ul{
@@ -1275,6 +1278,44 @@ header{
 
 /****************   product page *************/
 
+#block-views-text-site-block{
+  @include width;
+  font-size: 1.2em;
+  .view{
+    background-color: #f4fff2;
+    border: 1px solid #8eb486;
+    padding: 20px 30px 30px;
+  }
+  h2{
+    font-size: 1.2em;
+    font-weight: normal;
+    margin: 0;
+  }
+  .view-content{
+    ul{
+      padding: 0;
+    }
+    li{
+      list-style-type: none;
+      &:before {
+        background-color: $light-green;
+        border-radius: 50%;
+        content: "";
+        display: inline-block;
+        height: 10px;
+        margin-left: 10px;
+        position: relative;
+        top: -2px;
+        width: 10px;
+      }
+    }
+    p{
+      font-size: 1.4em;
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+}
 .node-type-product{
   .similar-product{
         padding-top: 20px;

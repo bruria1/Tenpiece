@@ -189,9 +189,15 @@ if ($("body").hasClass("front")){
   $(".arrow-bottom").css("top", $height);
 }
 
-
-
-
+/*************  mobile - front category  **************/
+if ($("body").hasClass("front")) {
+   $i = 1;
+   $("#block-views-mobil-product-block .views-row").each(function(){
+     $class = "place"+$i++;
+     $(this).addClass($class); 
+     if ($i>3) { $i=1;}
+    });
+};
 
   }
 };
