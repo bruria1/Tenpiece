@@ -74,6 +74,10 @@ if ($("body").hasClass("node-type-product")) {
      $(this).addClass($class); 
      if ($i>4) { $i=1;}
     });
+  if (document.getElementById("block-block-7")) {
+    $(".gray-area-wrapper").css({ display: "none" });
+  } 
+
 };
 
 /*******  store page   *******/
@@ -147,36 +151,49 @@ $(document).ready(function(){
     });
 });
 
+/***  add product page  ********/
+
 if ($("body").hasClass("page-node-add-product") || ($("body").hasClass("page-node-edit") && $("body").hasClass("node-type-product"))) {
 
   $("#edit-field-main-category-und-0-tid-select-1").change(function () {
     if ($(this).find("option:selected").val() == "7") {
-           $("#edit-field-surface").css({ display: "block" });
+           $("#edit-field-surface").css({ height: "auto" });
     }
     else{
-           $("#edit-field-surface").css({ display: "none" });
+           $("#edit-field-surface").css({ height: "0" });
     }
   });
 
   $("#edit-field-main-category-und-0-tid-select-1").change(function () {
     if ($(this).find("option:selected").val() == "15") {
-           $("#edit-field-material").css({ display: "block" });
+           $("#edit-field-material").css({ height: "auto" });
     }
     else{
-           $("#edit-field-material").css({ display: "none" });
+           $("#edit-field-material").css({ height: "0" });
     }
   });
+
+  if ($("#edit-field-main-category-und-0-tid-select-1").val() == "15") {
+           $("#edit-field-material").css({ height: "auto" });
+  }
 
   $("#edit-field-main-category-und-0-tid-select-1").change(function () {
     if ($(this).find("option:selected").val() == "10") {
-           $("#edit-field-other").css({ display: "block" });
+           $("#edit-field-other").css({ height: "auto" });
     }
     else{
-           $("#edit-field-other").css({ display: "none" });
+           $("#edit-field-other").css({ height: "0" });
     }
   });
 
+  $('.multipage-link-next').click(function(){
+    $("html, body").animate({ scrollTop: $("body").offset().top +20 }, 2000);
+    return false;
+  });
+
 }
+
+
 
 /********  arrow - front  ************/
 if ($("body").hasClass("front")){
@@ -197,6 +214,9 @@ if ($("body").hasClass("front")) {
      if ($i>3) { $i=1;}
     });
 };
+
+
+//$(".multipage-pane-title").insertAfter(".multipage-controls-list");
 
   }
 };

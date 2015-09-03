@@ -114,6 +114,9 @@
   </header>
   </div>
 
+
+<div id="page">
+
   <?php if ($breadcrumb || render($page['filter'])): ?>
 
     <div class="gray-area-wrapper">
@@ -123,9 +126,6 @@
        </div>
      </div>
     <?php endif ?>
-<div id="page">
-
-
 
   <div id="main">
 
