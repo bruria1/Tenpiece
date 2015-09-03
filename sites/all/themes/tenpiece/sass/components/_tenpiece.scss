@@ -1212,6 +1212,7 @@ body{
     }
     .form-submit{
       @include button($light-green, $green, $light-green-h, $green-h);
+      width: auto!important;
     }
     .item-list{
       display: none;
@@ -1228,6 +1229,7 @@ body{
     }
     .form-submit{
       @include button($light-yellow, $yellow, $light-yellow-h, $yellow-h);
+      width: auto!important;
     }
     .group-shipping-details{
       h3{
