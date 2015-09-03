@@ -186,8 +186,8 @@ if ($("body").hasClass("page-node-add-product") || ($("body").hasClass("page-nod
     }
   });
 
-  $('.multipage-link-next').click(function(){
-    $("html, body").animate({ scrollTop: $("body").offset().top +20 }, 2000);
+  $('.multipage-button .form-submit').click(function(){
+    $("html, body").animate({ scrollTop: $("body").offset().top +20 }, 0);
     return false;
   });
 
