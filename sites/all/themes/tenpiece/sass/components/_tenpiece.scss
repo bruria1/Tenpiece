@@ -1220,16 +1220,15 @@ body{
   }
 }
 
-#user-register-form, #user-login, #user-pass{
-     width: 42%;
+  #block-formblock-user-register, #user-login, #user-pass{
+    width: 42%;
     float: right;
     @include res(s-m){
       width: 100%;
-    } 
-}
+    }
+  }
 
   #block-formblock-user-register, #user-register-form, #user-login, #user-pass{
-
     h2{
       background-position: right -63px;
     }
