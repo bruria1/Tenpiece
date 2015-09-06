@@ -215,8 +215,9 @@ if ($("body").hasClass("front")) {
     });
 };
 
+/*************  refister form  **************/
 
-//$(".multipage-pane-title").insertAfter(".multipage-controls-list");
+
 
   }
 };

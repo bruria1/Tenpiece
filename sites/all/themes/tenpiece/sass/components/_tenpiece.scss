@@ -1178,12 +1178,12 @@ body{
 
 /**************** add product *********/
 
-.page-node-5{
+.page-node-5, .page-design-register, .page-user-login, .page-user-password{
   #page-title{
     color: $purple;
     font-weight: bold;
   }
-  .region-content-bottom{
+  .region-content-bottom, #user-register-form, #user-login{
     overflow: hidden;
     .description, .password-strength, .password-suggestions{
       display: none!important;
@@ -1218,7 +1218,9 @@ body{
       display: none;
     }
   }
-  #block-formblock-user-register{
+}
+
+  #block-formblock-user-register, #user-register-form, #user-login, #user-pass{
     width: 42%;
     float: right;
     @include res(s-m){
@@ -1233,17 +1235,35 @@ body{
     }
     .group-shipping-details{
       h3{
-          background-position: right 4px;
+          background-position: right 5px!important;
       }
     }
   }
+
+#edit-field-adress{
+      .fieldset-legend, .country, .form-item-field-adress-und-0-premise{
+        display: none;
+      }
+      .form-wrapper{
+        border: none;
+      }
+      input{
+        width: 100%;
+      }
+      .form-type-textfield{
+        width: 100%;
+      }
+      fieldset{
+        padding: 0;
+        margin: 0;
+      }
 }
 
 .form-type-password > .password-confirm{
   display: none;
 }
 
-.page-node-5, .page-node-add-product{
+.page-node-5, .page-node-add-product, .page-design-register, .page-user-login, #user-pass{
     input{
       width: 100%!important;
       height: 40px;
@@ -1424,10 +1444,6 @@ body{
         font-size: 1.5em;
         margin: 0;
     }
-    .shs-wrapper-processed .has-children{
-      background: none;
-      margin: 0;
-    }
   .form-type-textfield{
     margin: 0;
   }
@@ -1533,6 +1549,108 @@ body{
     display: none;
   }
 }
+
+.shs-wrapper-processed{
+  select{
+    height: 40px;
+    border-radius: 5px;
+    border:1px solid #cacaca;
+    margin-left: 5px;
+  }
+  .has-children{
+      background: none;
+      margin: 0;
+    }
+}
+/**********  register form  *********/
+
+.page-design-register{
+  .tabs-primary{
+    display: none;
+  }
+  #user-register-form{
+    @include width;
+    margin: 0 auto;
+    float: none;
+  }
+  #edit-account, .group-shipping-details{
+    width: 42%;
+    float: right;
+    clear: right;
+    @include res(s-m){
+      width: 100%;
+    }
+  }
+  .group-manufacturer{
+    width: 42%;
+    float: left;
+    @include res(s-m){
+      width: 100%;
+    }
+  }
+  .form-actions{
+    float: left;
+    clear: both;
+  }
+  .password-confirm.form-text{
+    display: block;
+  }
+  .group-shipping-details{
+      h3{
+          background: none!important;
+          padding: 0!important;
+      }
+  }
+  #edit-profile-main-field-design-logo{
+    position: relative;
+  }
+  .image-widget-data{
+    width: 100%!important;
+    margin-top: 5px;
+    a{
+      color: #000;
+    }
+    .form-submit.ajax-processed{
+      margin: 0;
+      position: absolute;
+      left: 0;
+      top: 27px;
+      transition: all 0s!important;
+      -webkit-transition: all 0s!important;
+    }
+    .form-file{
+      width:60%!important;
+      float: right;
+      padding: 0;
+    }
+  }
+  #edit-profile-main-field-doing, #edit-profile-main-field-design-logo{
+    label{
+      color: #000;
+      font-size: 1.2em;
+      padding: 0;
+      position: relative;
+    }
+  }
+}
+
+/**************** user login & password *********/
+
+.page-user-login, .page-user-password{
+  .tabs-primary{
+    display: none;
+  }
+  #main #content{
+    @include width;
+  }
+  #user-login, #page-user-password{
+    padding: 0;
+  }
+  #page-title{
+    padding: 0;
+  }
+}
+
 /**************** edit product *********/
 
 #edit-field-other, #edit-field-surface, #edit-field-material{
