@@ -208,13 +208,21 @@ if ($("body").hasClass("front")){
 /*************  mobile - front category  **************/
 if ($("body").hasClass("front")) {
    $i = 1;
-   $("#block-views-mobil-product-block .views-row").each(function(){
+   $("#block-views-mobil-product-block .views-field-nothing").each(function(){
      $class = "place"+$i++;
      $(this).addClass($class); 
      if ($i>3) { $i=1;}
     });
 };
 
+if ($("body").hasClass("front")) {
+   $i = 1;
+   $("#block-views-category-mobile-block tr").each(function(){
+     $class = "place"+$i++;
+     $(this).addClass($class); 
+     if ($i>3) { $i=1;}
+    });
+};
 /*************  refister form  **************/
 
 
