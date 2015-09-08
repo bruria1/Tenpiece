@@ -65,6 +65,13 @@ $('#page').on('click', function() {
       $('#block-commerce-cart-cart').removeClass("open");
       $('body').removeClass("cart-open");
 });
+
+if ( $( "body" ).hasClass( "node-type-product" ) ) {
+  if ($('div.warning').length) {
+        $('#block-commerce-cart-cart').addClass("open");
+        $('body').addClass("cart-open");
+  }
+};
 /*******  product   *******/
 
 if ($("body").hasClass("node-type-product")) {

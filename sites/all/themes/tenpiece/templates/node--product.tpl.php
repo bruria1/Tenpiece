@@ -36,6 +36,7 @@
     hide($content['links']);
     hide($content['field_imgs']);
     hide($content['group_more_details']);
+    hide($content['field_product_status']);
     ?>
     <div class="left">
       <?php print render($content['field_imgs']); ?>
@@ -62,12 +63,14 @@
         print render($content['group_more_details']);
         ?>
       </div>
-      <div class="bottom-left">
-        <?php
-          $my_block = module_invoke('views', 'block_view', 'reviews_product_page-block');?>
-          <h2 class="title-comment"><?php print render($my_block['subject']);?></h2>
-          <?php print render($my_block['content']); 
-        ?>
-      </div>
+      <?php if($content['field_product_status']['#items']['0']['value']==6):?>
+        <div class="bottom-left">
+          <?php
+            $my_block = module_invoke('views', 'block_view', 'reviews_product_page-block');?>
+            <h2 class="title-comment"><?php print render($my_block['subject']);?></h2>
+            <?php print render($my_block['content']); 
+          ?>
+        </div>
+      <?php endif; ?>
     </div>
   </div>

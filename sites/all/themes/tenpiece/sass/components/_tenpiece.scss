@@ -91,6 +91,10 @@ body{
   }
 }
 
+.message-wrapper{
+  @include width;
+}
+
 .button-green{
   @include button($light-green, $green, $light-green-h, $green-h);
 }
@@ -749,12 +753,18 @@ body{
   margin-top: 0;
   overflow: hidden;
   position: inherit;
+  @include res(s-m){
+    width: 100%;
+  }
   .view-footer{
     position: absolute;
     bottom: 0;
     right: 0;
     width: 19%;
     text-align: center;
+    @include res(s-m){
+      width: 100%;
+    }
     p{
       margin: 0;
     }
@@ -768,6 +778,7 @@ body{
       width: 100%;
       right: 0;
       bottom: 0;
+      box-sizing: border-box;
       &:hover{
         background: url("../images/all-product.png") no-repeat center center;
         color:  transparent!important;
@@ -815,6 +826,12 @@ body{
   .view-products.view-display-id-entity_view_2, .view-products.view-display-id-entity_view_1{
     .views-row{
       width: 30.6%;
+      @include res(s){
+        width: 100%;
+      }
+      @include res(m){
+        width: 48%;
+      }
     }
     .views-row-last{
       margin-left: 0;
@@ -1028,6 +1045,11 @@ body{
       border:none;
       margin: 0;
       padding: 0;
+    }
+  }
+  .menu-2592, .menu-2591{
+    @include res(s-m){
+      display: none;
     }
   }
 }
@@ -1326,12 +1348,12 @@ body{
 
 /**************** add product *********/
 
-.page-node-5, .page-design-register, .page-user-login, .page-user-password{
+.page-node-5, .page-design-register, .page-user-login, .page-user-password, .page-user-edit{
   #page-title{
     color: $purple;
     font-weight: bold;
   }
-  .region-content-bottom, #user-register-form, #user-login{
+  .region-content-bottom, #user-register-form, #user-login, #user-profile-form{
     overflow: hidden;
     .description, .password-strength, .password-suggestions{
       display: none!important;
@@ -1377,13 +1399,14 @@ body{
     }
   }
 
-  #block-formblock-user-register, #user-register-form, #user-login, #user-pass{
+  #block-formblock-user-register, #user-register-form, #user-login, #user-pass, #user-profile-form{
     h2{
       background-position: right -63px;
     }
     .form-submit{
       @include button($light-yellow, $yellow, $light-yellow-h, $yellow-h);
       width: auto!important;
+      clear: both;
     }
     .group-shipping-details{
       h3{
@@ -1415,7 +1438,7 @@ body{
   display: none;
 }
 
-.page-node-5, .page-node-add-product, .page-design-register, .page-user-login, #user-pass{
+.page-node-5, .page-node-add-product, .page-design-register, .page-user-login, #user-pass, #user-profile-form{
     input{
       width: 100%!important;
       height: 40px;
@@ -1837,6 +1860,7 @@ body{
   height: 100%;
   z-index: 450;
   width: 420px;
+  max-width: 100%;
   margin-right: 5px;
   padding: 10px;
   left: 0;
@@ -1967,6 +1991,32 @@ body{
   }
 }
 
+
+.page-cart{
+  #edit-actions{
+    input{
+      @include button($light-purple, $purple, $light-purple-h, $purple-h);
+      font-size: 1.5em;
+      margin-right: 10px;
+    }
+  }
+  .view-commerce-cart-form{
+    @include width;
+  }
+  .views-field-edit-delete input{
+    @include button($light-yellow, $yellow, $light-yellow-h, $yellow-h); 
+  }
+  table{
+    width: 100%;
+    .views-field-field-imgs{
+      padding: 10px 10px 5px;
+    }
+    td{
+      display: table-cell;;
+      vertical-align: middle;
+    }
+  }
+}
 /****************   product page *************/
 
 #block-views-text-site-block{
@@ -2008,6 +2058,9 @@ body{
   }
 }
 .node-type-product{
+  .message-wrapper{
+    display: none;
+  }
   .similar-product{
         padding-top: 20px;
         a{
@@ -2191,7 +2244,7 @@ body{
       border:1px solid #d6d7d6;
       border-radius: 0;
       margin-top: 0;
-      padding-right: 7%;
+      padding-right: 40px;
       background: url("../images/product-page-icon.png") no-repeat #b3b3b3;
       background-size: 20px;
       box-sizing:border-box;
@@ -2292,6 +2345,11 @@ body{
         position: absolute;
         top: 0;
         left: 0;
+        @include res(s){
+          position: relative;
+          text-align: center;
+          margin: 20px 0;
+        }
         .views-slideshow-controls-text-pause{
           display: none;
         }
@@ -2545,3 +2603,152 @@ body{
   display: none;
 }
 
+/********  user page & checkput  ***********/
+.page-user{
+  #content .view, .profile{
+    @include width;
+  }
+  #page-title{
+    color: $purple;
+  }
+  .views-exposed-form .views-exposed-widget {
+      padding: 0.5em 0 0 1em;
+  }
+  #content table{
+    width: 100%;
+    a{
+      color: $green;
+    }
+    tr, td{
+      background: none;
+      padding: 10px 0 5px;
+    }
+
+    .views-field-field-main-category{
+      ul{
+        margin: 0;
+        padding: 0;
+      }
+      li{
+        list-style-type: none;
+        float: right;
+        margin: 0 0 0 5px;
+        padding: 0;
+        &.last:before{
+          content: " > ";
+        }
+      }
+    }
+    .field-name-commerce-price{
+      tr{
+        border: none;
+        td{
+          text-align: right;
+        }
+      }
+    }
+  }
+  .form-required{
+    display: none;
+  }
+  .views-exposed-form{
+    input, select{
+      height: 40px;
+      border-radius: 5px;
+      border:1px solid #cacaca;    }
+  }
+}
+
+.page-user .profile h3{
+  display: none;
+}
+
+.page-user-edit{
+  #main{
+    @include width;
+  }
+  #page-title, .tabs-primary, .tabs-secondary{
+    padding: 0;
+  }
+    .password-confirm.form-text{
+    display: block;
+  }
+  .group-manufacturer{
+    label{
+      position: relative!important;
+      padding: 0!important;
+      color: #000!important;
+      font-size: 1.2em;
+      margin-bottom: 5px;
+    }
+    .form-submit{
+      margin: 0!important;
+    }
+  }
+  .group-shipping-details{
+    float: left;
+    width: 42%;
+  }
+  #edit-account{
+    width: 42%;
+    float: right;
+  }
+}
+/**********  tabs  **********/
+
+.tabs-primary, .tabs-secondary{
+  @include width;
+  padding: 0 3%!important;
+  background: none;
+  margin-bottom: 20px!important;
+  a{
+    background: none;
+    padding: 0!important;
+    border-top:none!important;
+    border-right: none!important;
+    border-left: none!important;
+    border-bottom: 1px solid #fff;
+    margin-right: 0!important;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    border-radius: 0!important;
+    text-shadow: none!important;
+    &:hover, &.active{
+      color: $yellow;
+      background: none;
+      border-bottom: 1px solid $yellow;
+    }
+  }
+  li{
+    border: none!important;
+    margin-right: 0!important;
+    padding-right: 0!important;
+  }
+}
+
+.tabs-secondary{
+  ul{
+    padding: 0;
+  }
+  a{
+    &:hover, &.active{
+      color: $green;
+      border-bottom: 1px solid $green;
+    }
+  }
+}
+
+/***********  checkout  *********/
+
+ .page-checkout{
+    #main{
+      @include width;
+    }
+    #page-title, .tabs-primary, .tabs-secondary{
+      padding: 0;
+    }
+    .form-item-customer-profile-billing-commerce-customer-address-und-0-premise,
+    .form-item-customer-profile-shipping-commerce-customer-address-und-0-premise{
+      display: none;
+    }
+}
