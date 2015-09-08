@@ -454,14 +454,14 @@ body{
 
 //  mobile
 
-#block-views-mobil-product-block, #block-views-category-mobile-block, #block-views-products-block-2{
+#block-views-mobil-product-block, #block-views-category-mobile-block, #block-views-products-block-2, #block-views-category-mobile-block-1{
   display: none;
   @include res(s-m){
     display: block;
   }
 }
 
-#block-views-category-mobile-block{
+#block-views-category-mobile-block, #block-views-category-mobile-block-1{
   @include width;
   padding: 20px 3%;
   table{
@@ -741,7 +741,103 @@ body{
   }
 }
 
+.view-products.view-display-id-page_1{
+  @include res(s-m){
+    .views-row{
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border: none;
+      box-shadow: none;
+      padding-bottom: 5px;
+      margin-bottom: 17px;
+      border-bottom: 1px solid;
+      background-color: transparent;
+    }
+    .views-field-nid, .views-field-title{
+      position: relative!important;
+      opacity: 1!important;
+    }
+    .views-field-nid{
+      .title, .description{
+        display: none;
+      }
+      .price{
+        text-align: right;
+        float: right;
+        td{
+          padding: 0;
+        }
+        @include res(s){
+          .commerce-price-savings-formatter-price .price-amount{
+            font-size: 0.8em;
+          }
+        }
+      }
+    }
+    .views-field-title{
+      @include res(s){
+        font-size: 0.8em;
+      }
+      .title{
+        text-align: right;
+        float: right;
+      }
+      .design{
+        width: 65%;
+        float: right;
+        text-align: right;
+      }
+      .price{
+        display: none;
+      }
+    }
+    .views-field-title, .views-field-title-1{
+      .image, .title, .design, .price{
+        opacity: 1!important;
+      }
+    }
+    .image{
+      margin: 0;
+      width: auto;
+      float: right;
+      padding: 0px 0 10px 10px;
+      img{
+        height: 100px;
+        width: 100px;
+        float: right;
+        @include res(s-m){
+          width: 70px;
+          height: 70px;
+        }
+      }
+    }
+    .link{
+      position: absolute;
+      top: 13px;
+      left: 0;
+      a{
+        position: relative;
+        float: left;
+        width: 50px;
+        height: 50px;
+        box-sizing:border-box;
+        background: url("../images/arrow-product.png") no-repeat center center #deceea;
+        text-indent: -9999px;
+        border-radius: 50%;
+        background-size: 30px;
+      }
+    }
+  }
+}
 /************  store  *****************/
+
+
+#block-views-amir-inner-term-eva-block, #block-views-amir-inner-term-eva-block-2{
+  @include res(s-m){
+    display: none;
+  }
+}
 
 #block-views-amir-inner-term-eva-block, .view-products.view-display-id-page_1{
   @include width;

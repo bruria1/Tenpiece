@@ -230,6 +230,15 @@ if ($("body").hasClass("front")) {
      if ($i>3) { $i=1;}
     });
 };
+
+if ($("body").hasClass("page-taxonomy-term")) {
+   $i = 1;
+   $("#block-views-category-mobile-block-1 tr").each(function(){
+     $class = "place"+$i++;
+     $(this).addClass($class); 
+     if ($i>3) { $i=1;}
+    });
+};
 /*************  refister form  **************/
 
 
