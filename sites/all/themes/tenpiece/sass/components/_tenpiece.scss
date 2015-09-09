@@ -360,7 +360,7 @@ body{
     }
     .views-field-title{
       float: left;
-      width: 58.6%;
+      width: 57%;
       .title, .design, .price{
         display: none;
       }
@@ -1919,6 +1919,10 @@ body{
   .tabs-primary{
     display: none;
   }
+  .message-wrapper{
+    width: 100%;
+    padding: 0;
+  }
   #main #content{
     @include width;
   }
@@ -2088,31 +2092,7 @@ body{
 }
 
 
-.page-cart{
-  #edit-actions{
-    input{
-      @include button($light-purple, $purple, $light-purple-h, $purple-h);
-      font-size: 1.5em;
-      margin-right: 10px;
-    }
-  }
-  .view-commerce-cart-form{
-    @include width;
-  }
-  .views-field-edit-delete input{
-    @include button($light-yellow, $yellow, $light-yellow-h, $yellow-h); 
-  }
-  table{
-    width: 100%;
-    .views-field-field-imgs{
-      padding: 10px 10px 5px;
-    }
-    td{
-      display: table-cell;;
-      vertical-align: middle;
-    }
-  }
-}
+
 /****************   product page *************/
 
 #block-views-text-site-block{
@@ -2701,11 +2681,12 @@ body{
 
 /********  user page & checkput  ***********/
 .page-user{
-  #content .view, .profile{
+  #main{
     @include width;
   }
   #page-title{
     color: $purple;
+    padding: 0;
   }
   .views-exposed-form .views-exposed-widget {
       padding: 0.5em 0 0 1em;
@@ -2753,6 +2734,16 @@ body{
       border-radius: 5px;
       border:1px solid #cacaca;    }
   }
+  #content table.commerce-price-formatted-components{
+    width: 300px;
+    max-width: 100%;
+    float: left;
+  }
+  .field-name-commerce-customer-billing, .field-name-commerce-customer-shipping{
+    float: right;
+    clear: right;
+    margin-bottom: 10px;
+  }
 }
 
 .page-user .profile h3{
@@ -2760,6 +2751,10 @@ body{
 }
 
 .page-user-edit{
+  .message-wrapper{
+    width: 100%;
+    padding: 0;
+  }
   #main{
     @include width;
   }
@@ -2834,9 +2829,52 @@ body{
   }
 }
 
-/***********  checkout  *********/
+/***********  checkout & cart page *********/
+
+.page-cart #main,  .page-checkout #main, .page-user-orders #main{
+  #edit-actions input, a.button-cart{
+      @include button($light-purple, $purple, $light-purple-h, $purple-h);
+      font-size: 1.5em;
+      margin-right: 10px;
+  }
+  .view-commerce-cart-form{
+    @include width;
+  }
+  .views-field-edit-delete input{
+    @include button($light-yellow, $yellow, $light-yellow-h, $yellow-h); 
+  }
+  table{
+    width: 100%;
+    .views-field-field-imgs{
+      padding: 10px 10px 5px;
+    }
+    td{
+      display: table-cell;;
+      vertical-align: middle;
+    }
+    tr{
+      background: none;
+    }
+    .views-field-commerce-unit-price{
+      tbody{
+        border: none;
+      }
+      td{
+        padding: 0;
+        text-align: right;
+      }
+      tr{
+        border: none;
+      }
+    }
+  }
+}
 
  .page-checkout{
+  .message-wrapper{
+    width: 100%;
+    padding: 0;
+  }
     #main{
       @include width;
     }
@@ -2847,4 +2885,92 @@ body{
     .form-item-customer-profile-shipping-commerce-customer-address-und-0-premise{
       display: none;
     }
+    fieldset{
+      border: none;
+      padding: 0;
+      legend span{
+        font-size: 1.2em;
+        color: $purple;
+      }
+    }
+    .commerce-order-handler-area-order-total{
+      float: left;
+      table{
+        margin: 0;
+      }
+    }
+    .commerce-order-handler-area-order-total .commerce-price-formatted-components{
+      width: 300px;
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+    a.button-cart{
+      float: right;
+      margin-right: 0;
+    }
+    .view-footer{
+      p{
+        margin: 0;
+      }
+    }
+  .account{
+    input{
+      height: 40px;
+      border-radius: 5px;
+      border:1px solid #cacaca;
+      padding: 7px 10px;
+      width: 30%;
+    }
+    .form-submit{
+      @include button($light-purple, $purple, $light-purple-h, $purple-h); 
+      margin-bottom: 20px;
+      padding: 5px 20px;
+      font-size: 1.2em;
+      width: auto;
+    }
+  }
+  #customer-profile-billing-ajax-wrapper, #customer-profile-shipping-ajax-wrapper{
+    input.form-text{
+      height: 40px;
+      border-radius: 5px;
+      border:1px solid #cacaca;
+      padding: 7px 10px;
+      width: 100%;
+    }
+    .addressfield-container-inline.name-block, .street-block, .locality-block{
+      width: 300px;
+      max-width: 100%;
+      .form-item{
+        width: 100%;
+        margin: 5px 0;
+      }
+    }
+  }
+  #edit-customer-profile-billing-field-phone-number{
+      width: 300px;
+      max-width: 100%;
+    }
+  input#edit-customer-profile-billing-edit-button{
+      @include button($light-purple, $purple, $light-purple-h, $purple-h); 
+      margin-bottom: 20px;
+  }
+  input#edit-continue{
+      @include button($light-purple, $purple, $light-purple-h, $purple-h); 
+      margin-left: 10px;
+      margin-top: 20px;
+  }
+  input#edit-cancel, input#edit-back{
+    @include button($light-yellow, $yellow, $light-yellow-h, $yellow-h); 
+    margin-right: 10px;
+    margin-top: 20px;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  .commerce_shipping{
+    margin-bottom: 20px;
+  }
+  .commerce-customer-profile-copy .form-item{
+    margin-top: 5px;
+  }
 }
