@@ -999,3 +999,7 @@ div.add-or-remove-shortcuts {
 .multipage-button, .multipage-pane-title{
   display: none;
 }
+
+#product-node-form label{
+  position: relative;
+}
