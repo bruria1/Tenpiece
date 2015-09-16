@@ -2257,12 +2257,14 @@ body{
     table{
       margin: 9px 0 0 0;
     }
-    .field-name-commerce-price .field-label{
+    .field-label{
       font-size: 1.5em;
       color: $purple;
       font-weight: normal;
       float: right;
       margin-left: 15px;
+    }
+    .field-name-commerce-price .field-label{
       padding-top: 11px;
     }
     .commerce-price-savings-formatter-price{
