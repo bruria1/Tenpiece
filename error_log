@@ -141,3 +141,4 @@ Stack trace:
 [21-Jun-2015 22:21:43 Asia/Jerusalem] PHP Parse error:  syntax error, unexpected end of file in /home/tenpiece/public_html/sites/all/themes/tenpiece/template.php on line 159
 [24-Jun-2015 13:46:48 Asia/Jerusalem] PHP Parse error:  syntax error, unexpected ';' in /home/tenpiece/public_html/sites/all/themes/tenpiece/templates/node--product.tpl.php on line 60
 [29-Jun-2015 11:55:46 Asia/Jerusalem] PHP Parse error:  syntax error, unexpected end of file in /home/tenpiece/public_html/modules/comment/comment.module on line 513
+[06-Sep-2015 12:32:19 Asia/Jerusalem] PHP Fatal error:  Unsupported operand types in /home/tenpiece/public_html/modules/field/field.info.class.inc on line 495
