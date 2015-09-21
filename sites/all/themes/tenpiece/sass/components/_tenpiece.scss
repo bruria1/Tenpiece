@@ -178,11 +178,11 @@ body{
   }
   .region-filter{
       float: left;
-      padding: 15px 0;
+      padding: 10px 0 6px;
       .form-type-select.form-item-jump{
         margin: 0;
       }
-      #block-views-exp-products-page-1, #block-views-term-store-block-1{
+      #block-views-exp-products-page-1, #block-views-term-store-block-1, #block-views-term-store-block-3{
         float: left;
         .views-exposed-widget{
           padding: 0;
@@ -912,6 +912,9 @@ body{
 }
 
 .page-node-50, .page-taxonomy-term{
+  #page-title{
+    display: none;
+  }
   .gray-area-wrapper{
     display: block;
   }
@@ -2641,7 +2644,7 @@ body{
 
 /************  design select  ************/
 
-#block-views-term-store-block-1, #block-views-exp-products-page-1{
+#block-views-term-store-block-1, #block-views-term-store-block-3, #block-views-exp-products-page-1{
   .form-type-select {
     overflow: hidden;
     float: left;
