@@ -2805,6 +2805,16 @@ body{
     float: right;
   }
 }
+
+.view-tender-product{
+  .view-header{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  &.view-display-id-block_1{
+    border-top: 5px double $purple;
+  }
+}
 /**********  tabs  **********/
 
 .tabs-primary, .tabs-secondary{
