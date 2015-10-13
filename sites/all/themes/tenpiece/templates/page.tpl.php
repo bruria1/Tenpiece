@@ -110,7 +110,9 @@
               ?>
               </div>
           </div>
-      <?php } ?>      
+      <?php } ?> 
+            <a href="/login"><div class="login-icon top-icons"></div></a>
+     
   </header>
   </div>
 

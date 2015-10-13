@@ -1445,6 +1445,17 @@ body{
   position: relative;
 }
 
+.login-icon{
+  background-position: -50px 0;
+  position: relative;
+  @include res(s-m){
+    display: none;
+  }
+}
+
+.logged-in .login-icon{
+  display: none;
+}
 /**************** add product *********/
 
 .page-node-5, .page-design-register, .page-user-login, .page-user-password, .page-user-edit{
@@ -1537,7 +1548,7 @@ body{
   display: none;
 }
 
-.page-node-5, .page-node-add-product, .page-design-register, .page-user-login, #user-pass, #user-profile-form{
+.page-node-5, .page-node-add-product, .page-node-clone, .page-design-register, .page-user-login, #user-pass, #user-profile-form{
     input{
       width: 100%!important;
       height: 40px;
@@ -1588,7 +1599,7 @@ body{
   }
   .circle{
     border:1px solid #595959;
-    width: 38px;
+    width: 38px!important;
     height: 38px;
     color: #595959;
     border-radius: 50%;
@@ -1633,7 +1644,7 @@ body{
   }
 }
 
-.page-node-add-product{
+.page-node-add-product, .page-node-clone{
   #page-title{
     color: $purple;
     font-weight: bold;
@@ -2137,8 +2148,11 @@ body{
   }
 }
 .node-type-product{
-  .message-wrapper{
+  .message-wrapper .warning{
     display: none;
+  }
+  #edit-line-item-fields-field-sizeask input{
+    width: 100%;
   }
   .similar-product{
         padding-top: 20px;

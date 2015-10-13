@@ -160,7 +160,8 @@ $(document).ready(function(){
 
 /***  add product page  ********/
 
-if ($("body").hasClass("page-node-add-product") || ($("body").hasClass("page-node-edit") && $("body").hasClass("node-type-product"))) {
+
+if ($("body").hasClass("page-node-add-product") || ($("body").hasClass("page-node-clone")) || ($("body").hasClass("page-node-edit") && $("body").hasClass("node-type-product"))) {
 
   $("#edit-field-main-category-und-0-tid-select-1").change(function () {
     if ($(this).find("option:selected").val() == "7") {
@@ -171,6 +172,10 @@ if ($("body").hasClass("page-node-add-product") || ($("body").hasClass("page-nod
     }
   });
 
+  if ($("#edit-field-main-category-und-0-tid-select-1").val() == "15") {
+           $("#edit-field-material").css({ height: "auto" });
+  }
+  
   $("#edit-field-main-category-und-0-tid-select-1").change(function () {
     if ($(this).find("option:selected").val() == "15") {
            $("#edit-field-material").css({ height: "auto" });
