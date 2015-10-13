@@ -2692,10 +2692,13 @@ body{
     text-align:-webkit-center;
     margin-bottom: 5px;
     @include res(s){
-      width: 73%;
+      width: 230px;
       margin: 0 auto 5px;
       float: none;
     }
+  }
+  .views-exposed-form .views-exposed-widget{
+        float: none!important;
   }
   .form-type-select select {
     width: 107%;
