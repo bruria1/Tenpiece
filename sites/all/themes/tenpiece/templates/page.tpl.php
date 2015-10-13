@@ -111,7 +111,7 @@
               </div>
           </div>
       <?php } ?> 
-            <a href="/login"><div class="login-icon top-icons"></div></a>
+            <a href="/user/login" title="login"><div class="login-icon top-icons"></div></a>
      
   </header>
   </div>
