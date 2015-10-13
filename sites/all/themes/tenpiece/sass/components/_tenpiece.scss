@@ -179,17 +179,33 @@ body{
   .region-filter{
       float: left;
       padding: 10px 0 6px;
+      @include res(s){
+        float: none;
+        clear: both;
+        margin: 0 auto;
+      }
       .form-type-select.form-item-jump{
         margin: 0;
       }
       #block-views-exp-products-page-1, #block-views-term-store-block-1, #block-views-term-store-block-3{
         float: left;
+        @include res(s){
+          float: none;
+        }
         .views-exposed-widget{
           padding: 0;
         }
         select{
           width: 220px;
           margin-right: 40px;
+          @include res(m){
+            width: 150px;
+            font-size: 15px;
+            margin-right: 10px;
+          }
+          @include res(s){
+            margin-right: 0;
+          }
         }
         .views-exposed-widgets {
           margin-bottom: 0;
@@ -197,8 +213,12 @@ body{
       }
   }
   .breadcrumb{
-    float: right;
+      float: right;
       padding: 15px 0;
+      @include res(s){
+        width: 100%;
+        text-align: center;
+      }
       ol{
         color: #333;
        a{
@@ -2671,6 +2691,11 @@ body{
     text-align:-moz-center;
     text-align:-webkit-center;
     margin-bottom: 5px;
+    @include res(s){
+      width: 73%;
+      margin: 0 auto 5px;
+      float: none;
+    }
   }
   .form-type-select select {
     width: 107%;
